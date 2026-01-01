@@ -1,0 +1,460 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Custom colors */
+  --color-primary: #0B0F1A;
+  --color-primary-light: #0F172A;
+  --color-primary-dark: #060912;
+
+  --color-accent-blue: #3B82F6;
+  --color-accent-cyan: #06B6D4;
+  --color-accent-green: #10B981;
+  --color-accent-purple: #8B5CF6;
+
+  --color-glass-light: rgba(255, 255, 255, 0.05);
+  --color-glass-medium: rgba(255, 255, 255, 0.1);
+  --color-glass-heavy: rgba(255, 255, 255, 0.15);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-primary);
+  color: #f8fafc;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-cyan);
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 50%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 50%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow Effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
+    0 0 40px rgba(59, 130, 246, 0.3),
+    0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5),
+    0 0 40px rgba(16, 185, 129, 0.3),
+    0 0 60px rgba(16, 185, 129, 0.1);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5),
+    0 0 40px rgba(6, 182, 212, 0.3),
+    0 0 60px rgba(6, 182, 212, 0.1);
+}
+
+/* Button Glow Hover */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #3B82F6, #06B6D4, #10B981, #3B82F6);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: gradient 4s ease infinite;
+}
+
+.btn-glow:hover::before {
+  opacity: 1;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.6),
+    0 0 60px rgba(6, 182, 212, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Animated Border */
+.animated-border {
+  position: relative;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, #3B82F6, #06B6D4, #10B981, #8B5CF6, #3B82F6);
+  background-size: 300% 300%;
+  border-radius: inherit;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: gradient 4s ease infinite;
+}
+
+/* Shimmer Effect */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes gradient {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Float Animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: float 6s ease-in-out 3s infinite;
+}
+
+/* Particle Background */
+.particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 50%;
+  animation: particle-float 15s infinite;
+}
+
+@keyframes particle-float {
+
+  0%,
+  100% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: #fff;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+/* Link Hover Animation */
+.link-hover {
+  position: relative;
+}
+
+.link-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3B82F6, #06B6D4);
+  transition: width 0.3s ease;
+}
+
+.link-hover:hover::after {
+  width: 100%;
+}
+
+/* Container */
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Running Light Border Animation */
+.border-glow-card {
+  position: relative;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.02) 100%);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.border-glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background:
+    conic-gradient(from var(--angle, 0deg),
+      transparent 0%,
+      transparent 25%,
+      #3B82F6 30%,
+      #06B6D4 35%,
+      #10B981 40%,
+      transparent 45%,
+      transparent 100%),
+    conic-gradient(from var(--angle2, 180deg),
+      transparent 0%,
+      transparent 25%,
+      #10B981 30%,
+      #06B6D4 35%,
+      #3B82F6 40%,
+      transparent 45%,
+      transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  animation: rotate-border 5s linear infinite, rotate-border-reverse 5s linear infinite;
+  transition: opacity 0.1s ease;
+}
+
+.border-glow-card:hover::before {
+  opacity: 1;
+}
+
+.border-glow-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(135deg,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(11, 15, 26, 0.98) 100%);
+  border-radius: calc(1rem - 1px);
+  z-index: 0;
+}
+
+.border-glow-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes rotate-border {
+  0% {
+    --angle: 0deg;
+  }
+
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@keyframes rotate-border-reverse {
+  0% {
+    --angle2: 180deg;
+  }
+
+  100% {
+    --angle2: 540deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --angle2 {
+  syntax: "<angle>";
+  initial-value: 180deg;
+  inherits: false;
+}
+
+/* Background Icons */
+.hero-background-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 3rem;
+  /* color removed to allow brand colors to show */
+  transition: transform 0.1s linear;
+  /* Smooth mouse follow */
+}
+
+.icon-figma {
+  top: 20%;
+  left: 15%;
+  font-size: 4rem;
+  color: rgba(242, 78, 30, 0.15);
+}
+
+.icon-ps {
+  top: 70%;
+  left: 20%;
+  color: rgba(49, 168, 255, 0.15);
+}
+
+.icon-ai {
+  top: 30%;
+  right: 15%;
+  color: rgba(255, 154, 0, 0.15);
+}
+
+.icon-blender {
+  top: 75%;
+  right: 25%;
+  font-size: 3.5rem;
+  color: rgba(232, 125, 13, 0.15);
+}
+
+.icon-ae {
+  top: 15%;
+  right: 35%;
+  font-size: 2.5rem;
+  color: rgba(153, 153, 255, 0.15);
+}
