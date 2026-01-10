@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface TextRevealProps {
     text: string;
@@ -11,7 +11,7 @@ interface TextRevealProps {
 export default function TextReveal({ text, className = '', delay = 0 }: TextRevealProps) {
     const words = text.split(' ');
 
-    const container = {
+    const container: Variants = {
         hidden: { opacity: 0 },
         visible: (i = 1) => ({
             opacity: 1,
@@ -19,7 +19,7 @@ export default function TextReveal({ text, className = '', delay = 0 }: TextReve
         }),
     };
 
-    const child = {
+    const child: Variants = {
         hidden: {
             opacity: 0,
             y: 20,
@@ -30,7 +30,7 @@ export default function TextReveal({ text, className = '', delay = 0 }: TextReve
             y: 0,
             rotateX: 0,
             transition: {
-                type: 'spring',
+                type: 'spring' as const,
                 damping: 12,
                 stiffness: 100,
             },
@@ -62,7 +62,7 @@ export default function TextReveal({ text, className = '', delay = 0 }: TextReve
 export function CharacterReveal({ text, className = '', delay = 0 }: TextRevealProps) {
     const characters = text.split('');
 
-    const container = {
+    const container: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -70,7 +70,7 @@ export function CharacterReveal({ text, className = '', delay = 0 }: TextRevealP
         },
     };
 
-    const child = {
+    const child: Variants = {
         hidden: {
             opacity: 0,
             y: 50,
@@ -79,7 +79,7 @@ export function CharacterReveal({ text, className = '', delay = 0 }: TextRevealP
             opacity: 1,
             y: 0,
             transition: {
-                type: 'spring',
+                type: 'spring' as const,
                 damping: 12,
                 stiffness: 200,
             },

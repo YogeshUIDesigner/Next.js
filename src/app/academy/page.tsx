@@ -56,8 +56,8 @@ export default function AcademyPage() {
                                     key={category}
                                     onClick={() => setSelectedCategory(category)}
                                     className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category
-                                            ? 'bg-accent-blue text-white shadow-[0_0_20px_rgba(59,130,246,0.4)]'
-                                            : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                                        ? 'bg-accent-blue text-white shadow-[0_0_20px_rgba(59,130,246,0.4)]'
+                                        : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
                                         }`}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
@@ -139,8 +139,8 @@ export default function AcademyPage() {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, scale: 0.9 }}
-                                    transition={{ 
-                                        duration: 0.3, 
+                                    transition={{
+                                        duration: 0.3,
                                         delay: index * 0.05,
                                         ease: 'easeOut'
                                     }}
