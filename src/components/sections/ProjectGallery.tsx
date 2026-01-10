@@ -5,29 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import ScrollReveal from '@/components/animations/ScrollReveal';
-import { GALLERY_CATEGORIES } from '@/data/projectGallery';
+import { projectGalleryData, GALLERY_CATEGORIES } from '@/data/projectGallery';
 
 export default function ProjectGallery() {
-    const [projects, setProjects] = useState<any[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [projects, setProjects] = useState<any[]>(projectGalleryData);
+    const [isLoading, setIsLoading] = useState(false);
     const [activeFilter, setActiveFilter] = useState('All');
-
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const response = await fetch('/api/projects?type=gallery');
-                if (!response.ok) throw new Error('Failed to fetch');
-                const data = await response.json();
-                setProjects(data);
-            } catch (error) {
-                console.error('Error fetching projects:', error);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchProjects();
-    }, []);
 
     const filteredProjects = useMemo(() => {
         let results = activeFilter === 'All'

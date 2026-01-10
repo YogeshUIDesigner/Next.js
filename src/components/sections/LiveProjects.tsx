@@ -6,32 +6,14 @@ import Link from 'next/link';
 import { ChevronLeftIcon, ChevronRightIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
-// Static data removed - fetching from database
+import { liveProjectsData } from '@/data/liveProjects';
 
 export default function LiveProjects() {
-    const [liveProjects, setLiveProjects] = useState<any[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [liveProjects, setLiveProjects] = useState<any[]>(liveProjectsData);
+    const [isLoading, setIsLoading] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
     const [visibleCards, setVisibleCards] = useState(3);
-
-    // Fetch live projects
-    useEffect(() => {
-        const fetchProjects = async () => {
-            try {
-                const response = await fetch('/api/projects?type=live');
-                if (!response.ok) throw new Error('Failed to fetch');
-                const data = await response.json();
-                setLiveProjects(data);
-            } catch (error) {
-                console.error('Error fetching projects:', error);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchProjects();
-    }, []);
 
     // Handle responsive visible cards
     useEffect(() => {
