@@ -13,7 +13,7 @@ import Button from '@/components/ui/Button';
 
 const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/programs', label: 'Programs' },
+    { href: '/contact', label: 'Contact' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/about', label: 'About' },
@@ -93,8 +93,8 @@ export default function Navbar() {
 
                 {/* Desktop CTA */}
                 <div className="hidden lg:flex items-center gap-4">
-                    <Link href="/programs">
-                        <Button size="sm">Get Funded</Button>
+                    <Link href="/contact">
+                        <Button size="sm">Contact Us</Button>
                     </Link>
                 </div>
 
@@ -191,8 +191,8 @@ export default function Navbar() {
                                 transition={{ delay: navLinks.length * 0.05 }}
                                 className="flex flex-col w-full gap-4 mt-8"
                             >
-                                <Link href="/programs" onClick={() => setIsOpen(false)}>
-                                    <Button size="lg" className="w-full">Get Funded</Button>
+                                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                                    <Button size="lg" className="w-full">Contact Us</Button>
                                 </Link>
                             </motion.div>
                         </div>

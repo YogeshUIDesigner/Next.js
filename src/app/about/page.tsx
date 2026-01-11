@@ -37,8 +37,8 @@ const values = [
 
 const stats = [
     { value: '2021', label: 'Founded' },
-    { value: '10K+', label: 'Traders Funded' },
-    { value: '$5M+', label: 'Payouts Made' },
+    { value: '150+', label: 'Projects Completed' },
+    { value: '50+', label: 'Happy Clients' },
     { value: '24/7', label: 'Support' },
 ];
 
@@ -63,10 +63,10 @@ export default function AboutPage() {
                                 About Us
                             </motion.span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                                Empowering Traders <span className="gradient-text">Worldwide</span>
+                                Crafting Visual <span className="gradient-text">Experiences</span>
                             </h1>
                             <p className="text-lg text-gray-400">
-                                We believe talented traders deserve access to capital. Our mission is to identify, fund, and support the best futures traders in the world.
+                                I specialize in transforming ideas into stunning visual realities through UI/UX design, 2D/3D animation, and motion graphics.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -103,13 +103,13 @@ export default function AboutPage() {
                                 </h2>
                                 <div className="space-y-4 text-gray-400">
                                     <p>
-                                        yogeshDesigner was founded by traders who understood the challenges of accessing sufficient capital. We experienced firsthand the frustration of having profitable strategies but lacking the funds to maximize their potential.
+                                        My journey started with a passion for art and technology. I've always been fascinated by how design can influence behavior and create emotional connections.
                                     </p>
                                     <p>
-                                        In 2021, we set out to create a prop firm that puts traders first. One with transparent rules, fair evaluations, and genuine profit sharing. Today, we&apos;ve funded over 10,000 traders worldwide and paid out millions in profits.
+                                        Since 2021, I've worked as a freelancer, collaborating with startups and established brands to build distinctive identities and immersive digital experiences.
                                     </p>
                                     <p>
-                                        Our team combines decades of trading experience with cutting-edge technology to provide the best possible environment for traders to thrive.
+                                        My approach combines technical precision with creative intuition to deliver designs that are not only beautiful but also highly functional.
                                     </p>
                                 </div>
                             </div>
@@ -176,10 +176,10 @@ export default function AboutPage() {
                                 Ready to Join Our Community?
                             </h2>
                             <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                                Take the first step towards trading with funded capital. Join thousands of successful traders today.
+                                Let's collaborate to bring your vision to life. Whether it's a new brand or a complex 3D project, I'm ready to help.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <Link href="/programs">
+                                <Link href="/contact">
                                     <Button size="lg">Get Started</Button>
                                 </Link>
                                 <Link href="/how-it-works">

@@ -9,11 +9,11 @@ const footerLinks = {
         { href: '/about', label: 'About Us' },
         { href: '/how-it-works', label: 'How It Works' },
         { href: '/portfolio', label: 'Portfolio' },
-        { href: '/programs', label: 'Programs' },
+        { href: '/contact', label: 'Contact Us' },
     ],
     support: [
         { href: '#', label: 'Help Center' },
-        { href: '#', label: 'Contact Us' },
+        { href: '/contact', label: 'Contact' },
         { href: '#', label: 'FAQ' },
     ],
 };
@@ -113,7 +113,7 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-gray-400 mb-6 max-w-sm">
-                            Empowering traders with funded accounts and the tools they need to succeed in the futures markets.
+                            Empowering brands with high-end UI/UX, 3D animations, and creative visual solutions.
                         </p>
                         {/* Social Links */}
                         <div className="flex gap-3">
