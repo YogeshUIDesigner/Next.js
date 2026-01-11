@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion';
 import ContactForm from '@/components/sections/ContactForm';
 import ScrollReveal from '@/components/animations/ScrollReveal';
+import Link from 'next/link';
+import Button from '@/components/ui/Button';
+import StaggerContainer, { StaggerItem } from '@/components/animations/StaggerContainer';
 
 export default function ContactPage() {
     return (

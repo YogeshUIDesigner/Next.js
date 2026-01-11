@@ -20,18 +20,18 @@ const values = [
     },
     {
         icon: HeartIcon,
-        title: 'Trader-First',
-        description: 'We succeed when our traders succeed. Your growth is our priority.',
+        title: 'Client-First',
+        description: 'I succeed when my clients succeed. Your vision is my priority.',
     },
     {
         icon: RocketLaunchIcon,
         title: 'Innovation',
-        description: 'Constantly improving our platform, tools, and trader experience.',
+        description: 'Constantly improving my workflow, tools, and design techniques.',
     },
     {
         icon: EyeIcon,
         title: 'Integrity',
-        description: 'Honest payouts, fair rules, and ethical business practices.',
+        description: 'Transparent workflows, clear milestones, and ethical creative practices.',
     },
 ];
 
@@ -123,7 +123,7 @@ export default function AboutPage() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/30 to-accent-cyan/30" />
                                 <div className="relative text-center p-8">
                                     <div className="text-8xl mb-4">🚀</div>
-                                    <p className="text-white text-xl font-semibold">Building the future of prop trading</p>
+                                    <p className="text-white text-xl font-semibold">Building the future of creative design</p>
                                 </div>
                             </motion.div>
                         </ScrollReveal>
@@ -173,7 +173,7 @@ export default function AboutPage() {
                     <ScrollReveal>
                         <div className="glass-card p-12 rounded-3xl text-center">
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                                Ready to Join Our Community?
+                                Ready to Start Your Project?
                             </h2>
                             <p className="text-gray-400 mb-8 max-w-xl mx-auto">
                                 Let's collaborate to bring your vision to life. Whether it's a new brand or a complex 3D project, I'm ready to help.

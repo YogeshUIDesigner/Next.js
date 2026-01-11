@@ -77,17 +77,17 @@ export default function Footer() {
                                     Stay Updated
                                 </h3>
                                 <p className="text-gray-400">
-                                    Get the latest news and trading insights delivered to your inbox.
+                                    Get the latest design news and project updates delivered to your inbox.
                                 </p>
                             </div>
-                            <div className="flex w-full md:w-auto gap-3">
+                            <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3">
                                 <input
                                     type="email"
                                     placeholder="Enter your email"
-                                    className="flex-1 md:w-80 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-accent-blue/50 transition-colors"
+                                    className="w-full md:w-80 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-accent-blue/50 transition-colors"
                                 />
                                 <motion.button
-                                    className="px-6 py-3 bg-gradient-to-r from-accent-blue to-accent-cyan text-white font-semibold rounded-xl whitespace-nowrap"
+                                    className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-accent-blue to-accent-cyan text-white font-semibold rounded-xl whitespace-nowrap"
                                     whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(59, 130, 246, 0.5)' }}
                                     whileTap={{ scale: 0.98 }}
                                 >
