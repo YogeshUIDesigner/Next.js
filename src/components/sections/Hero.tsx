@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import { CharacterReveal } from '@/components/animations/TextReveal';
@@ -15,11 +15,22 @@ export default function Hero() {
         offset: ['start start', 'end start'],
     });
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
 
-    // Parallax logic for background icons
+    // Parallax logic for background icons - Disable on mobile
     const figmaY = useTransform(scrollYProgress, [0, 1], [0, -100]);
     const psY = useTransform(scrollYProgress, [0, 1], [0, -80]);
     const aiY = useTransform(scrollYProgress, [0, 1], [0, -60]);
@@ -27,6 +38,7 @@ export default function Hero() {
     const aeY = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
     const getParallaxStyle = (speed: number) => {
+        if (isMobile) return {}; // Disable parallax on mobile
         if (speed === 0.05) return { y: figmaY };
         if (speed === 0.04) return { y: psY };
         if (speed === 0.03) return { y: aiY };
@@ -42,58 +54,48 @@ export default function Hero() {
         >
             {/* Animated Background */}
             <div className="absolute inset-0 z-0">
-                {/* Main gradient orbs */}
-                <motion.div
-                    className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/30 blur-[150px]"
-                    animate={{
-                        x: [0, 50, 0],
-                        y: [0, 30, 0],
-                        scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                    }}
-                />
-                <motion.div
-                    className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/20 blur-[120px]"
-                    animate={{
-                        x: [0, -40, 0],
-                        y: [0, -30, 0],
-                        scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                        duration: 10,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                        delay: 1,
-                    }}
-                />
-                <motion.div
-                    className="absolute bottom-1/4 left-1/2 w-[400px] h-[400px] rounded-full bg-accent-green/15 blur-[100px]"
-                    animate={{
-                        x: [0, 60, 0],
-                        y: [0, -40, 0],
-                        scale: [1, 1.15, 1],
-                    }}
-                    transition={{
-                        duration: 12,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                        delay: 2,
-                    }}
-                />
+                {!isMobile && (
+                    <>
+                        {/* Main gradient orbs - ONLY on desktop */}
+                        <motion.div
+                            className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/20 blur-[150px]"
+                            animate={{
+                                x: [0, 50, 0],
+                                y: [0, 30, 0],
+                                scale: [1, 1.1, 1],
+                            }}
+                            transition={{
+                                duration: 15,
+                                repeat: Infinity,
+                                ease: 'easeInOut',
+                            }}
+                        />
+                        <motion.div
+                            className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/15 blur-[120px]"
+                            animate={{
+                                x: [0, -40, 0],
+                                y: [0, -30, 0],
+                                scale: [1, 1.2, 1],
+                            }}
+                            transition={{
+                                duration: 18,
+                                repeat: Infinity,
+                                ease: 'easeInOut',
+                                delay: 1,
+                            }}
+                        />
+                    </>
+                )}
 
                 {/* Grid pattern overlay */}
                 <div
-                    className="absolute inset-0 opacity-[0.02]"
+                    className="absolute inset-0 opacity-[0.01]"
                     style={{
                         backgroundImage: `
               linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
               linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
             `,
-                        backgroundSize: '60px 60px',
+                        backgroundSize: '100px 100px',
                     }}
                 />
 
@@ -104,7 +106,7 @@ export default function Hero() {
                 <div className="hero-background-icons">
                     <motion.div className="floating-icon icon-figma" style={getParallaxStyle(0.05)}>
                         <motion.div
-                            animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
+                            animate={isMobile ? {} : { y: [0, -20, 0], rotate: [0, 10, 0] }}
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                         >
                             <SiFigma />
@@ -112,7 +114,7 @@ export default function Hero() {
                     </motion.div>
                     <motion.div className="floating-icon icon-ps" style={getParallaxStyle(0.04)}>
                         <motion.div
-                            animate={{ y: [0, 15, 0], rotate: [0, -8, 0] }}
+                            animate={isMobile ? {} : { y: [0, 15, 0], rotate: [0, -8, 0] }}
                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                         >
                             <SiAdobephotoshop />
@@ -120,7 +122,7 @@ export default function Hero() {
                     </motion.div>
                     <motion.div className="floating-icon icon-ai" style={getParallaxStyle(0.03)}>
                         <motion.div
-                            animate={{ y: [0, -15, 0], rotate: [0, 12, 0] }}
+                            animate={isMobile ? {} : { y: [0, -15, 0], rotate: [0, 12, 0] }}
                             transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                         >
                             <SiAdobeillustrator />
@@ -128,7 +130,7 @@ export default function Hero() {
                     </motion.div>
                     <motion.div className="floating-icon icon-blender" style={getParallaxStyle(0.06)}>
                         <motion.div
-                            animate={{ y: [0, 20, 0], rotate: [0, -15, 0] }}
+                            animate={isMobile ? {} : { y: [0, 20, 0], rotate: [0, -15, 0] }}
                             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                         >
                             <SiBlender />
@@ -136,7 +138,7 @@ export default function Hero() {
                     </motion.div>
                     <motion.div className="floating-icon icon-ae" style={getParallaxStyle(0.02)}>
                         <motion.div
-                            animate={{ y: [0, -10, 0], rotate: [0, 8, 0] }}
+                            animate={isMobile ? {} : { y: [0, -10, 0], rotate: [0, 8, 0] }}
                             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
                         >
                             <SiAdobeaftereffects />

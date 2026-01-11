@@ -21,19 +21,20 @@ export default function ScrollReveal({
     once = true,
 }: ScrollRevealProps) {
     const getInitialPosition = () => {
+        const distance = typeof window !== 'undefined' && window.innerWidth < 768 ? 30 : 60;
         switch (direction) {
             case 'up':
-                return { y: 60 };
+                return { y: distance };
             case 'down':
-                return { y: -60 };
+                return { y: -distance };
             case 'left':
-                return { x: 60 };
+                return { x: distance };
             case 'right':
-                return { x: -60 };
+                return { x: -distance };
             case 'none':
                 return {};
             default:
-                return { y: 60 };
+                return { y: distance };
         }
     };
 
