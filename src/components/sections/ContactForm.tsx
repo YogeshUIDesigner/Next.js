@@ -15,15 +15,15 @@ const contactInfo = [
     {
         icon: EnvelopeIcon,
         label: 'Email',
-        value: 'hello@yogeshdesigner.in',
-        href: 'mailto:hello@yogeshdesigner.in',
+        value: 'yogeshoneness730@gmail.com',
+        href: 'mailto:yogeshoneness730@gmail.com',
         color: 'text-accent-blue',
     },
     {
         icon: PhoneIcon,
         label: 'Phone',
-        value: '+91 98765 43210',
-        href: 'tel:+919876543210',
+        value: '+91 98707 65966',
+        href: 'tel:+919870765966',
         color: 'text-accent-cyan',
     },
     {
@@ -39,15 +39,44 @@ export default function ContactForm() {
     const [formState, setFormState] = useState({
         name: '',
         email: '',
+        phone: '',
         subject: '',
         message: '',
     });
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission
-        console.log('Form submitted:', formState);
-        alert('Thank you for reaching out! This is a demo form.');
+        setStatus('loading');
+
+        try {
+            const formData = new FormData();
+            formData.append('access_key', '59ee0ef6-110f-4439-92c8-936ce8636abf');
+            formData.append('name', formState.name);
+            formData.append('email', formState.email);
+            formData.append('phone', formState.phone);
+            formData.append('subject', formState.subject);
+            formData.append('message', formState.message);
+            formData.append('from_name', 'Yogesh Designer Portfolio');
+
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setStatus('success');
+                setFormState({ name: '', email: '', phone: '', subject: '', message: '' });
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            setStatus('error');
+        }
     };
 
     return (
@@ -124,8 +153,19 @@ export default function ContactForm() {
                                             onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                                         />
                                     </div>
-                                </div>
 
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-gray-300 ml-1">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        required
+                                        className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-2xl text-white focus:outline-none focus:border-accent-blue/50 transition-colors placeholder-gray-600"
+                                        placeholder="+91 98707 65966"
+                                        value={formState.phone}
+                                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                                    />
+                                </div>
                                 <div className="space-y-2">
                                     <label className="text-sm font-medium text-gray-300 ml-1">Subject</label>
                                     <input
@@ -150,10 +190,47 @@ export default function ContactForm() {
                                     />
                                 </div>
 
-                                <Button type="submit" size="lg" className="w-full py-4 group">
-                                    Send Message
-                                    <ChatBubbleLeftRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                <Button
+                                    type="submit"
+                                    size="lg"
+                                    className="w-full py-4 group flex items-center justify-center gap-2"
+                                    disabled={status === 'loading'}
+                                >
+                                    {status === 'loading' ? (
+                                        <>
+                                            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                            Sending...
+                                        </>
+                                    ) : status === 'success' ? (
+                                        'Message Sent!'
+                                    ) : status === 'error' ? (
+                                        'Error! Try Again'
+                                    ) : (
+                                        <>
+                                            Send Message
+                                            <ChatBubbleLeftRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                        </>
+                                    )}
                                 </Button>
+
+                                {status === 'success' && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-accent-green text-center text-sm font-medium mt-4"
+                                    >
+                                        Thank you! Your message has been sent successfully.
+                                    </motion.p>
+                                )}
+                                {status === 'error' && (
+                                    <motion.p
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-red-400 text-center text-sm font-medium mt-4"
+                                    >
+                                        Something went wrong. Please check your connection or try again.
+                                    </motion.p>
+                                )}
                             </form>
                         </div>
                     </ScrollReveal>

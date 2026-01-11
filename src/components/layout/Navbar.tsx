@@ -40,7 +40,7 @@ export default function Navbar() {
     return (
         <motion.header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                ? 'py-3 bg-primary/80 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
+                ? 'py-3 bg-[#0B0F1A]/95 md:bg-primary/80 md:backdrop-blur-xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
                 : 'py-5 bg-transparent'
                 }`}
             initial={{ y: -100 }}

@@ -44,7 +44,7 @@ export default function FloatingSocial() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-center gap-4">
+        <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] flex flex-col items-center gap-4">
             <AnimatePresence>
                 {isOpen && (
                     <div className="flex flex-col items-center gap-4 mb-2">
