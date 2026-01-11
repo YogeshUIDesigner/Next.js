@@ -88,22 +88,26 @@ export default function PortfolioPage() {
                                     transition={{ duration: 0.4 }}
                                 >
                                     <div className="border-glow-card rounded-2xl overflow-hidden group/card cursor-pointer bg-primary-light/10 backdrop-blur-sm border border-white/5 h-full">
-                                        {/* Project Image */}
+                                        {/* Project Media */}
                                         <div className="relative aspect-[16/10] overflow-hidden">
-                                            <motion.img
-                                                src={project.image}
-                                                alt={project.title}
-                                                className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
-                                            />
-
-                                            {/* Overlay on hover */}
-                                            <motion.div
-                                                className="absolute inset-0 bg-black/60 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4"
-                                            >
-                                                <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-                                                    <ArrowTopRightOnSquareIcon className="w-5 h-5 text-white" />
-                                                </div>
-                                            </motion.div>
+                                            {project.image.trim().endsWith('.mp4') || project.image.trim().match(/\.(mp4|webm|ogg)$/i) ? (
+                                                <video
+                                                    key={project.image}
+                                                    controls
+                                                    muted
+                                                    loop
+                                                    playsInline
+                                                    className="w-full h-full object-cover"
+                                                >
+                                                    <source src={project.image} type="video/mp4" />
+                                                </video>
+                                            ) : (
+                                                <motion.img
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    className="w-full h-full object-cover project-image-scroll"
+                                                />
+                                            )}
 
                                             <div className="absolute top-4 left-4">
                                                 <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-white text-[10px] uppercase tracking-widest font-bold">

@@ -426,3 +426,13 @@ body {
   font-size: 2.5rem;
   color: rgba(153, 153, 255, 0.15);
 }
+
+/* Project Image Scrolling Effect */
+.project-image-scroll {
+  object-position: top !important;
+  transition: object-position 3s ease-in-out !important;
+}
+
+.group\/card:hover .project-image-scroll {
+  object-position: bottom !important;
+}

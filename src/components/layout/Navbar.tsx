@@ -13,10 +13,10 @@ import Button from '@/components/ui/Button';
 
 const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/contact', label: 'Contact' },
-    { href: '/how-it-works', label: 'How It Works' },
-    { href: '/portfolio', label: 'Portfolio' },
     { href: '/about', label: 'About' },
+    { href: '/portfolio', label: 'Portfolio' },
+     { href: '/how-it-works', label: 'How It Works' },
+    { href: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
