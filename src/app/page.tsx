@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
+      {/* <Stats /> */}
       <LiveProjects />
       <ProjectGallery />
       <WhyChooseUs />
