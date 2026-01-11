@@ -55,16 +55,16 @@ body {
 
 /* Glassmorphism Utilities */
 .glass {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glass-light {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -72,10 +72,22 @@ body {
   background: linear-gradient(135deg,
       rgba(255, 255, 255, 0.05) 0%,
       rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile-specific overrides for glass */
+@media (max-width: 768px) {
+
+  .glass,
+  .glass-light,
+  .glass-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(15, 23, 42, 0.9);
+  }
 }
 
 /* Gradient Text */
@@ -95,21 +107,15 @@ body {
 
 /* Glow Effects */
 .glow-blue {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
-    0 0 40px rgba(59, 130, 246, 0.3),
-    0 0 60px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
 
 .glow-green {
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5),
-    0 0 40px rgba(16, 185, 129, 0.3),
-    0 0 60px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
 }
 
 .glow-cyan {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5),
-    0 0 40px rgba(6, 182, 212, 0.3),
-    0 0 60px rgba(6, 182, 212, 0.1);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
 }
 
 /* Button Glow Hover */
@@ -129,7 +135,12 @@ body {
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
-  animation: gradient 4s ease infinite;
+}
+
+@media (min-width: 769px) {
+  .btn-glow::before {
+    animation: gradient 4s ease infinite;
+  }
 }
 
 .btn-glow:hover::before {
@@ -137,8 +148,7 @@ body {
 }
 
 .btn-glow:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.6),
-    0 0 60px rgba(6, 182, 212, 0.4);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
   transform: translateY(-2px);
 }
 
@@ -158,7 +168,12 @@ body {
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  animation: gradient 4s ease infinite;
+}
+
+@media (min-width: 769px) {
+  .animated-border::before {
+    animation: gradient 4s ease infinite;
+  }
 }
 
 /* Shimmer Effect */
@@ -176,7 +191,7 @@ body {
       rgba(255, 255, 255, 0.1),
       transparent);
   transform: translateX(-100%);
-  animation: shimmer 2s infinite;
+  animation: shimmer 2.5s infinite;
 }
 
 @keyframes shimmer {
@@ -206,7 +221,7 @@ body {
   }
 
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-15px);
   }
 }
 
@@ -214,47 +229,9 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-.float-delayed {
-  animation: float 6s ease-in-out 3s infinite;
-}
-
-/* Particle Background */
-.particles {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(59, 130, 246, 0.5);
-  border-radius: 50%;
-  animation: particle-float 15s infinite;
-}
-
-@keyframes particle-float {
-
-  0%,
-  100% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
-  }
-
-  10% {
-    opacity: 1;
-  }
-
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(-100vh) rotate(720deg);
-    opacity: 0;
+@media (max-width: 768px) {
+  .float {
+    animation: none;
   }
 }
 
@@ -268,26 +245,6 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-accent-blue);
   outline-offset: 2px;
-}
-
-/* Link Hover Animation */
-.link-hover {
-  position: relative;
-}
-
-.link-hover::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #3B82F6, #06B6D4);
-  transition: width 0.3s ease;
-}
-
-.link-hover:hover::after {
-  width: 100%;
 }
 
 /* Container */
@@ -317,42 +274,51 @@ body {
 /* Running Light Border Animation */
 .border-glow-card {
   position: relative;
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.05) 0%,
-      rgba(255, 255, 255, 0.02) 100%);
+  background: rgba(15, 23, 42, 0.8);
   border-radius: 1rem;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.border-glow-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: inherit;
-  background:
-    conic-gradient(from var(--angle, 0deg),
-      transparent 0%,
-      transparent 25%,
-      #3B82F6 30%,
-      #06B6D4 35%,
-      #10B981 40%,
-      transparent 45%,
-      transparent 100%),
-    conic-gradient(from var(--angle2, 180deg),
-      transparent 0%,
-      transparent 25%,
-      #10B981 30%,
-      #06B6D4 35%,
-      #3B82F6 40%,
-      transparent 45%,
-      transparent 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  animation: rotate-border 5s linear infinite, rotate-border-reverse 5s linear infinite;
-  transition: opacity 0.1s ease;
+@media (min-width: 769px) {
+  .border-glow-card {
+    border: none;
+  }
+
+  .border-glow-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background:
+      conic-gradient(from var(--angle, 0deg),
+        transparent 0%,
+        transparent 25%,
+        #3B82F6 30%,
+        #06B6D4 35%,
+        #10B981 40%,
+        transparent 45%,
+        transparent 100%),
+      conic-gradient(from var(--angle2, 180deg),
+        transparent 0%,
+        transparent 25%,
+        #10B981 30%,
+        #06B6D4 35%,
+        #3B82F6 40%,
+        transparent 45%,
+        transparent 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    animation: rotate-border 5s linear infinite, rotate-border-reverse 5s linear infinite;
+    transition: opacity 0.3s ease;
+  }
+
+  .border-glow-card:hover::before {
+    opacity: 1;
+  }
 }
 
 .border-glow-card:hover::before {

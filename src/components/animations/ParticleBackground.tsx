@@ -5,68 +5,74 @@ import { motion } from 'framer-motion';
 
 export default function ParticleBackground() {
     const [particles, setParticles] = useState<Array<{ id: number; x: number; delay: number; duration: number; size: number }>>([]);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const newParticles = Array.from({ length: 50 }, (_, i) => ({
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        const particleCount = window.innerWidth < 768 ? 15 : 40;
+        const newParticles = Array.from({ length: particleCount }, (_, i) => ({
             id: i,
             x: Math.random() * 100,
             delay: Math.random() * 20,
-            duration: 15 + Math.random() * 20,
-            size: 2 + Math.random() * 4,
+            duration: 20 + Math.random() * 20,
+            size: 2 + Math.random() * 3,
         }));
         setParticles(newParticles);
+
+        return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
     return (
         <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-            {/* Gradient orbs */}
-            <motion.div
-                className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/20 blur-[120px]"
-                animate={{
-                    x: [0, 100, 0],
-                    y: [0, 50, 0],
-                    scale: [1, 1.2, 1],
-                }}
-                transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                }}
-            />
-            <motion.div
-                className="absolute top-1/2 -right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/15 blur-[100px]"
-                animate={{
-                    x: [0, -80, 0],
-                    y: [0, -60, 0],
-                    scale: [1, 1.3, 1],
-                }}
-                transition={{
-                    duration: 18,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: 2,
-                }}
-            />
-            <motion.div
-                className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] rounded-full bg-accent-green/10 blur-[80px]"
-                animate={{
-                    x: [0, 60, 0],
-                    y: [0, -40, 0],
-                    scale: [1, 1.1, 1],
-                }}
-                transition={{
-                    duration: 15,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: 4,
-                }}
-            />
+            {/* Gradient orbs - Simplified on mobile */}
+            {!isMobile && (
+                <>
+                    <motion.div
+                        className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/15 blur-[120px]"
+                        animate={{
+                            x: [0, 50, 0],
+                            y: [0, 25, 0],
+                            scale: [1, 1.1, 1],
+                        }}
+                        transition={{
+                            duration: 25,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                        }}
+                    />
+                    <motion.div
+                        className="absolute top-1/2 -right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/10 blur-[100px]"
+                        animate={{
+                            x: [0, -40, 0],
+                            y: [0, -30, 0],
+                            scale: [1, 1.15, 1],
+                        }}
+                        transition={{
+                            duration: 22,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                            delay: 2,
+                        }}
+                    />
+                </>
+            )}
 
-            {/* Floating particles */}
+            {/* Static subtle background for mobile */}
+            {isMobile && (
+                <div className="absolute inset-0 bg-gradient-to-b from-primary via-primary-light/50 to-primary opacity-50" />
+            )}
+
+            {/* Floating particles - Fewer and slower on mobile */}
             {particles.map((particle) => (
                 <motion.div
                     key={particle.id}
-                    className="absolute rounded-full bg-accent-blue/30"
+                    className="absolute rounded-full bg-accent-blue/20"
                     style={{
                         left: `${particle.x}%`,
                         width: particle.size,
@@ -75,7 +81,7 @@ export default function ParticleBackground() {
                     initial={{ y: '110vh', opacity: 0 }}
                     animate={{
                         y: '-10vh',
-                        opacity: [0, 1, 1, 0],
+                        opacity: [0, 0.8, 0.8, 0],
                     }}
                     transition={{
                         duration: particle.duration,
@@ -88,13 +94,13 @@ export default function ParticleBackground() {
 
             {/* Grid pattern */}
             <div
-                className="absolute inset-0 opacity-[0.03]"
+                className="absolute inset-0 opacity-[0.02]"
                 style={{
                     backgroundImage: `
             linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
           `,
-                    backgroundSize: '50px 50px',
+                    backgroundSize: '80px 80px',
                 }}
             />
         </div>
