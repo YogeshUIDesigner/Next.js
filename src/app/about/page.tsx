@@ -15,30 +15,30 @@ import {
 const values = [
     {
         icon: ShieldCheckIcon,
-        title: 'Transparency',
-        description: 'No hidden rules, no surprises. Everything is clear from day one.',
+        title: 'Creativity & Quality',
+        description: 'We believe creativity is the core of everything we build. From design to animation, we focus on ideas that stand out and leave a lasting impression.',
     },
     {
         icon: HeartIcon,
-        title: 'Client-First',
-        description: 'I succeed when my clients succeed. Your vision is my priority.',
+        title: 'Client-Centric Approach',
+        description: 'Our clients’ goals come first. We listen, understand, and create solutions that truly align with their vision and business needs.',
     },
     {
         icon: RocketLaunchIcon,
-        title: 'Innovation',
-        description: 'Constantly improving my workflow, tools, and design techniques.',
+        title: 'Innovation & Growth',
+        description: 'We constantly explore new trends, tools, and technologies to deliver modern, engaging, and future-ready digital experiences.',
     },
     {
         icon: EyeIcon,
-        title: 'Integrity',
-        description: 'Transparent workflows, clear milestones, and ethical creative practices.',
+        title: 'Quality & Commitment',
+        description: 'We never compromise on quality. Every project is handled with attention to detail, dedication, and a commitment to excellence.',
     },
 ];
 
 const stats = [
-    { value: '2021', label: 'Founded' },
-    { value: '150+', label: 'Projects Completed' },
-    { value: '50+', label: 'Happy Clients' },
+    { value: '100+', label: 'Projects Completed' },
+    { value: '3+ Years', label: 'Creative Experience' },
+    { value: '30+', label: 'Happy Clients' },
     { value: '24/7', label: 'Support' },
 ];
 
@@ -63,10 +63,10 @@ export default function AboutPage() {
                                 About Us
                             </motion.span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                                Crafting Visual <span className="gradient-text">Experiences</span>
+                                Empowering Brands <span className="gradient-text">With Design & Technology</span>
                             </h1>
                             <p className="text-lg text-gray-400">
-                                I specialize in transforming ideas into stunning visual realities through UI/UX design, 2D/3D animation, and motion graphics.
+                                We help brands grow through creative design, modern websites, 2D & 3D animation, and impactful visual content.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -103,13 +103,13 @@ export default function AboutPage() {
                                 </h2>
                                 <div className="space-y-4 text-gray-400">
                                     <p>
-                                        My journey started with a passion for art and technology. I've always been fascinated by how design can influence behavior and create emotional connections.
+                                        We combine creativity and technology to build digital solutions that not only look great but also deliver real results. Every project we work on is unique, with a strong focus on design, performance, and user experience.
                                     </p>
                                     <p>
-                                        Since 2021, I've worked as a freelancer, collaborating with startups and established brands to build distinctive identities and immersive digital experiences.
+                                        Our team specializes in website design, UI/UX design, branding, 2D & 3D animation, brochure design, flyer design, and creative visual content that help brands build a powerful and memorable online presence. We believe in transforming simple ideas into impactful digital experiences that connect with the audience and communicate the brand’s message effectively.
                                     </p>
                                     <p>
-                                        My approach combines technical precision with creative intuition to deliver designs that are not only beautiful but also highly functional.
+                                        We are committed to quality, creativity, and innovation, using modern tools and best practices to deliver solutions that add long-term value to our clients.
                                     </p>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@ export default function AboutPage() {
                                 Our <span className="gradient-text">Values</span>
                             </h2>
                             <p className="text-gray-400 max-w-2xl mx-auto">
-                                The principles that guide everything we do
+                                The principles that guide everything we do — from how we work with clients to the quality of our designs.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -173,10 +173,11 @@ export default function AboutPage() {
                     <ScrollReveal>
                         <div className="glass-card p-12 rounded-3xl text-center">
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                                Ready to Start Your Project?
+                                Ready to Start Your Next Project?
                             </h2>
                             <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                                Let's collaborate to bring your vision to life. Whether it's a new brand or a complex 3D project, I'm ready to help.
+                                Let’s bring your ideas to life with creative design, modern websites, and 2D & 3D animation.
+                                Partner with us to create impactful digital experiences.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <Link href="/contact">

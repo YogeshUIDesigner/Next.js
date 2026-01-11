@@ -24,7 +24,7 @@ export const projectGalleryData = [
         id: 4,
         title: 'Animated Dashboard GIF',
         category: 'GIF',
-        image: '/Images/Portfolio/GIF/Dashboard.gif',
+        image: '/Images/Portfolio/gif/Dashboard.gif',
         url: '#'
     },
     {
@@ -66,12 +66,12 @@ export const projectGalleryData = [
         id: 10,
         title: 'Animated  GIF',
         category: 'GIF',
-        image: '/Images/Portfolio/GIF/gif-2.gif',
+        image: '/Images/Portfolio/gif/gif-2.gif',
         url: '#'
     },
     {
         id: 11,
-        title: 'Animated  GIF',
+        title: 'Dussehra-Animation',
         category: '2D Motion',
         image: '/Images/Portfolio/2d/Dussehra-Animation=2.mp4',
         url: '#'
