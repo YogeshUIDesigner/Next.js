@@ -2,7 +2,6 @@ import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import LiveProjects from "@/components/sections/LiveProjects";
 import ProjectGallery from "@/components/sections/ProjectGallery";
-import ProgramsSection from "@/components/sections/ProgramsSection";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Platforms from "@/components/sections/Platforms";
 import Testimonials from "@/components/sections/Testimonials";
@@ -13,10 +12,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
+      {/* <Stats /> */}
       <LiveProjects />
       <ProjectGallery />
-      <ProgramsSection />
       <WhyChooseUs />
       <Platforms />
       <Testimonials />

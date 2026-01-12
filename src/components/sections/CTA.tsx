@@ -63,22 +63,22 @@ export default function CTA() {
 
                         {/* Heading */}
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                        Let’s Build Something
+                            Let’s Build Something
                             <br />
                             <span className="gradient-text">Great Together</span>
                         </h2>
 
                         {/* Subheading */}
                         <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-                        Looking for a designer who can handle UI/UX, 2D & 3D animation, motion graphics, and print creatives?
-                        Let’s collaborate to create visuals that are engaging, functional, and brand-focused.
+                            Looking for a designer who can handle UI/UX, 2D & 3D animation, motion graphics, and print creatives?
+                            Let’s collaborate to create visuals that are engaging, functional, and brand-focused.
                         </p>
 
                         {/* CTAs */}
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                            <Link href="/programs">
+                            <Link href="/contact">
                                 <Button size="lg" className="min-w-[220px] group">
-                                    Get Started Now
+                                    Let's Get Started
                                     <motion.span
                                         animate={{ x: [0, 5, 0] }}
                                         transition={{ duration: 1.5, repeat: Infinity }}

@@ -15,30 +15,30 @@ import {
 const values = [
     {
         icon: ShieldCheckIcon,
-        title: 'Transparency',
-        description: 'No hidden rules, no surprises. Everything is clear from day one.',
+        title: 'Creativity & Quality',
+        description: 'We believe creativity is the core of everything we build. From design to animation, we focus on ideas that stand out and leave a lasting impression.',
     },
     {
         icon: HeartIcon,
-        title: 'Trader-First',
-        description: 'We succeed when our traders succeed. Your growth is our priority.',
+        title: 'Client-Centric Approach',
+        description: 'Our clients’ goals come first. We listen, understand, and create solutions that truly align with their vision and business needs.',
     },
     {
         icon: RocketLaunchIcon,
-        title: 'Innovation',
-        description: 'Constantly improving our platform, tools, and trader experience.',
+        title: 'Innovation & Growth',
+        description: 'We constantly explore new trends, tools, and technologies to deliver modern, engaging, and future-ready digital experiences.',
     },
     {
         icon: EyeIcon,
-        title: 'Integrity',
-        description: 'Honest payouts, fair rules, and ethical business practices.',
+        title: 'Quality & Commitment',
+        description: 'We never compromise on quality. Every project is handled with attention to detail, dedication, and a commitment to excellence.',
     },
 ];
 
 const stats = [
-    { value: '2021', label: 'Founded' },
-    { value: '10K+', label: 'Traders Funded' },
-    { value: '$5M+', label: 'Payouts Made' },
+    { value: '100+', label: 'Projects Completed' },
+    { value: '3+ Years', label: 'Creative Experience' },
+    { value: '30+', label: 'Happy Clients' },
     { value: '24/7', label: 'Support' },
 ];
 
@@ -63,10 +63,10 @@ export default function AboutPage() {
                                 About Us
                             </motion.span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                                Empowering Traders <span className="gradient-text">Worldwide</span>
+                                Empowering Brands <span className="gradient-text">With Design & Technology</span>
                             </h1>
                             <p className="text-lg text-gray-400">
-                                We believe talented traders deserve access to capital. Our mission is to identify, fund, and support the best futures traders in the world.
+                                We help brands grow through creative design, modern websites, 2D & 3D animation, and impactful visual content.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -103,13 +103,13 @@ export default function AboutPage() {
                                 </h2>
                                 <div className="space-y-4 text-gray-400">
                                     <p>
-                                        yogeshDesigner was founded by traders who understood the challenges of accessing sufficient capital. We experienced firsthand the frustration of having profitable strategies but lacking the funds to maximize their potential.
+                                        We combine creativity and technology to build digital solutions that not only look great but also deliver real results. Every project we work on is unique, with a strong focus on design, performance, and user experience.
                                     </p>
                                     <p>
-                                        In 2021, we set out to create a prop firm that puts traders first. One with transparent rules, fair evaluations, and genuine profit sharing. Today, we&apos;ve funded over 10,000 traders worldwide and paid out millions in profits.
+                                        Our team specializes in website design, UI/UX design, branding, 2D & 3D animation, brochure design, flyer design, and creative visual content that help brands build a powerful and memorable online presence. We believe in transforming simple ideas into impactful digital experiences that connect with the audience and communicate the brand’s message effectively.
                                     </p>
                                     <p>
-                                        Our team combines decades of trading experience with cutting-edge technology to provide the best possible environment for traders to thrive.
+                                        We are committed to quality, creativity, and innovation, using modern tools and best practices to deliver solutions that add long-term value to our clients.
                                     </p>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/30 to-accent-cyan/30" />
                                 <div className="relative text-center p-8">
                                     <div className="text-8xl mb-4">🚀</div>
-                                    <p className="text-white text-xl font-semibold">Building the future of prop trading</p>
+                                    <p className="text-white text-xl font-semibold">Building the future of creative design</p>
                                 </div>
                             </motion.div>
                         </ScrollReveal>
@@ -140,7 +140,7 @@ export default function AboutPage() {
                                 Our <span className="gradient-text">Values</span>
                             </h2>
                             <p className="text-gray-400 max-w-2xl mx-auto">
-                                The principles that guide everything we do
+                                The principles that guide everything we do — from how we work with clients to the quality of our designs.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -173,13 +173,14 @@ export default function AboutPage() {
                     <ScrollReveal>
                         <div className="glass-card p-12 rounded-3xl text-center">
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                                Ready to Join Our Community?
+                                Ready to Start Your Next Project?
                             </h2>
                             <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                                Take the first step towards trading with funded capital. Join thousands of successful traders today.
+                                Let’s bring your ideas to life with creative design, modern websites, and 2D & 3D animation.
+                                Partner with us to create impactful digital experiences.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <Link href="/programs">
+                                <Link href="/contact">
                                     <Button size="lg">Get Started</Button>
                                 </Link>
                                 <Link href="/how-it-works">

@@ -4,36 +4,36 @@ import { motion } from 'framer-motion';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import StaggerContainer, { StaggerItem } from '@/components/animations/StaggerContainer';
 import {
-    ShieldCheckIcon,
-    CurrencyDollarIcon,
-    ClockIcon,
-    ChartBarSquareIcon,
+    ComputerDesktopIcon,
+    FilmIcon,
+    SparklesIcon,
+    PrinterIcon,
 } from '@heroicons/react/24/outline';
 
 const features = [
     {
-        icon: ShieldCheckIcon,
+        icon: ComputerDesktopIcon,
         title: 'UI/UX & Web Design',
         description:
             'User-focused interfaces, responsive layouts, and clean design systems for web and mobile experiences.',
         color: 'from-accent-blue to-accent-cyan',
     },
     {
-        icon: CurrencyDollarIcon,
+        icon: FilmIcon,
         title: '2D & 3D Animation',
         description:
             'Engaging 2D animations and realistic 3D visuals to explain ideas, products, and brand stories.',
         color: 'from-accent-green to-accent-cyan',
     },
     {
-        icon: ClockIcon,
+        icon: SparklesIcon,
         title: 'Motion Graphics & Visuals',
         description:
             'Smooth motion designs for videos, reels, promos, and digital branding content.',
         color: 'from-accent-purple to-accent-blue',
     },
     {
-        icon: ChartBarSquareIcon,
+        icon: PrinterIcon,
         title: 'Flyers, Brochures & Print',
         description:
             'High-quality marketing creatives designed for both digital use and professional print output.',
@@ -61,14 +61,14 @@ export default function WhyChooseUs() {
                                 className="inline-block px-4 py-1.5 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan text-sm font-medium mb-4"
                                 whileHover={{ scale: 1.05 }}
                             >
-                               Why Work With Me?
+                                Why Work With Me?
                             </motion.span>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-                            Design Crafted for <span className="gradient-text">Real Results</span>
+                                Design Crafted for <span className="gradient-text">Real Results</span>
                             </h2>
                             <p className="text-gray-400 text-lg mb-8">
-                            I create complete visual experiences—combining UI/UX design with 2D & 3D animation, motion graphics, and print creatives.
-                            From digital interfaces to marketing visuals, every design is crafted to communicate clearly and look impactful.
+                                I create complete visual experiences—combining UI/UX design with 2D & 3D animation, motion graphics, and print creatives.
+                                From digital interfaces to marketing visuals, every design is crafted to communicate clearly and look impactful.
                             </p>
 
                             {/* Trust indicators */}

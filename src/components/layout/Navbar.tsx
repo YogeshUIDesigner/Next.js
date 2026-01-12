@@ -13,10 +13,10 @@ import Button from '@/components/ui/Button';
 
 const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/programs', label: 'Programs' },
-    { href: '/how-it-works', label: 'How It Works' },
-    { href: '/portfolio', label: 'Portfolio' },
     { href: '/about', label: 'About' },
+    { href: '/portfolio', label: 'Portfolio' },
+     { href: '/how-it-works', label: 'How It Works' },
+    { href: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -40,7 +40,7 @@ export default function Navbar() {
     return (
         <motion.header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                ? 'py-3 bg-primary/80 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
+                ? 'py-3 bg-[#0B0F1A]/95 md:bg-primary/80 md:backdrop-blur-xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.3)]'
                 : 'py-5 bg-transparent'
                 }`}
             initial={{ y: -100 }}
@@ -93,8 +93,8 @@ export default function Navbar() {
 
                 {/* Desktop CTA */}
                 <div className="hidden lg:flex items-center gap-4">
-                    <Link href="/programs">
-                        <Button size="sm">Get Funded</Button>
+                    <Link href="/contact">
+                        <Button size="sm">Contact Us</Button>
                     </Link>
                 </div>
 
@@ -135,17 +135,22 @@ export default function Navbar() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className="lg:hidden fixed inset-0 bg-primary z-50 flex flex-col"
+                        className="lg:hidden fixed inset-0 bg-[#0F172A] z-[100] flex flex-col h-[100dvh]"
                         initial={{ opacity: 0, x: '100%' }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: '100%' }}
-                        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                        transition={{
+                            type: 'spring',
+                            damping: 30,
+                            stiffness: 300,
+                            mass: 0.8
+                        }}
                     >
                         {/* Mobile Menu Header */}
-                        <div className="flex items-center justify-between p-6 border-b border-white/5">
+                        <div className="flex items-center justify-between p-6 border-b border-white/10 bg-[#0F172A]/80 backdrop-blur-lg sticky top-0 z-10">
                             <Link href="/" className="relative z-10" onClick={() => setIsOpen(false)}>
                                 <div className="flex items-center gap-2">
-                                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-blue to-accent-cyan flex items-center justify-center">
+                                    <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-accent-blue to-accent-cyan flex items-center justify-center">
                                         <span className="text-white font-bold text-lg">Y</span>
                                     </div>
                                     <span className="text-lg font-bold text-white">
@@ -154,7 +159,7 @@ export default function Navbar() {
                                 </div>
                             </Link>
                             <button
-                                className="p-2 rounded-lg bg-white/5 border border-white/10"
+                                className="p-2.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
                                 onClick={() => setIsOpen(false)}
                             >
                                 <XMarkIcon className="w-6 h-6 text-white" />
@@ -162,18 +167,19 @@ export default function Navbar() {
                         </div>
 
                         {/* Mobile Menu Links */}
-                        <div className="flex-1 overflow-y-auto py-12 px-6 flex flex-col items-center gap-8">
+                        <div className="flex-1 overflow-y-auto pt-8 pb-12 px-6 flex flex-col items-center gap-6">
                             {navLinks.map((link, index) => (
                                 <motion.div
                                     key={link.href}
-                                    initial={{ opacity: 0, y: 20 }}
+                                    initial={{ opacity: 0, y: 15 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 20 }}
-                                    transition={{ delay: index * 0.05 }}
+                                    exit={{ opacity: 0, y: 15 }}
+                                    transition={{ delay: index * 0.04 }}
+                                    className="w-full text-center"
                                 >
                                     <Link
                                         href={link.href}
-                                        className={`text-2xl font-semibold transition-colors ${pathname === link.href
+                                        className={`block py-3 text-xl font-semibold transition-colors ${pathname === link.href
                                             ? 'text-accent-cyan'
                                             : 'text-white hover:text-accent-cyan'
                                             }`}
@@ -185,14 +191,14 @@ export default function Navbar() {
                             ))}
 
                             <motion.div
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 15 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 20 }}
-                                transition={{ delay: navLinks.length * 0.05 }}
-                                className="flex flex-col w-full gap-4 mt-8"
+                                exit={{ opacity: 0, y: 15 }}
+                                transition={{ delay: navLinks.length * 0.04 }}
+                                className="flex flex-col w-full gap-4 mt-4 px-4"
                             >
-                                <Link href="/programs" onClick={() => setIsOpen(false)}>
-                                    <Button size="lg" className="w-full">Get Funded</Button>
+                                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                                    <Button size="lg" className="w-full py-4 rounded-2xl shadow-lg shadow-accent-blue/20">Contact Us</Button>
                                 </Link>
                             </motion.div>
                         </div>

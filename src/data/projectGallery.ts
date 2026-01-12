@@ -1,51 +1,79 @@
 export const projectGalleryData = [
     {
         id: 1,
-        title: '3ddD Abstract Motion',
+        title: 'Neurology Brain 3D Animation',
         category: '3D Motion',
-        image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+        image: '/Images/Portfolio/3d/Game.mp4',
         url: '#'
     },
     {
         id: 2,
-        title: '2D Character Animation',
+        title: 'Company Branding Animation',
         category: '2D Motion',
-        image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
+        image: '/Images/Portfolio/2d/Company Branding.mp4',
         url: '#'
     },
     {
         id: 3,
-        title: 'Modern E-commerce',
+        title: 'Marhaba Home Web Design',
         category: 'Web Design',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+        image: '/Images/Portfolio/figma/Marhaba Home page.webp',
         url: '#'
     },
     {
         id: 4,
-        title: 'Animated Logo GIF',
+        title: 'Animated Dashboard GIF',
         category: 'GIF',
-        image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80',
+        image: '/Images/Portfolio/gif/Dashboard.gif',
         url: '#'
     },
     {
         id: 5,
-        title: '3D Product Reveal',
+        title: 'New Year 3D Animation',
         category: '3D Motion',
-        image: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800&q=80',
+        image: '/Images/Portfolio/3d/new-year.mp4',
         url: '#'
     },
     {
         id: 6,
-        title: 'SaaS Landing Page',
+        title: 'Expensepilot Web Design',
         category: 'Web Design',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+        image: '/Images/Portfolio/figma/Expensepilot.webp',
         url: '#'
     },
     {
-        id: 6,
-        title: 'SaaS Landing Page',
+        id: 7,
+        title: 'Inaki Beni Web Design',
         category: 'Web Design',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+        image: '/Images/Portfolio/figma/Inaki Beni.webp',
+        url: '#'
+    },
+    {
+        id: 8,
+        title: 'World Food Day Animation',
+        category: '2D Motion',
+        image: '/Images/Portfolio/2d/World Food Day Animation.mp4',
+        url: '#'
+    },
+    {
+        id: 9,
+        title: 'Neurology Brain 3D Animation',
+        category: '3D Motion',
+        image: '/Images/Portfolio/3d/neurology-brain-3d-animation.mp4',
+        url: '#'
+    },
+    {
+        id: 10,
+        title: 'Animated  GIF',
+        category: 'GIF',
+        image: '/Images/Portfolio/gif/gif-2.gif',
+        url: '#'
+    },
+    {
+        id: 11,
+        title: 'Dussehra-Animation',
+        category: '2D Motion',
+        image: '/Images/Portfolio/2d/Dussehra-Animation=2.mp4',
         url: '#'
     }
 ];
