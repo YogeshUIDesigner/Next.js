@@ -5,8 +5,15 @@ import ProjectGallery from "@/components/sections/ProjectGallery";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Platforms from "@/components/sections/Platforms";
 import Testimonials from "@/components/sections/Testimonials";
+import ContactForm from "@/components/sections/ContactForm";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Yogesh Designer | Creative UI/UX & Graphic Design Portfolio",
+  description: "Welcome to the official portfolio of Yogesh Designer. Explore my latest work in UI/UX design, branding, and motion graphics.",
+};
 
 export default function Home() {
   return (
@@ -18,6 +25,7 @@ export default function Home() {
       <WhyChooseUs />
       <Platforms />
       <Testimonials />
+      <ContactForm />
       <FAQ />
       <CTA />
     </>

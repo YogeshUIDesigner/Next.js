@@ -29,7 +29,7 @@ const contactInfo = [
     {
         icon: MapPinIcon,
         label: 'Location',
-        value: 'Rajasthan, India',
+        value: 'Remote Work, India',
         href: '#',
         color: 'text-accent-green',
     },

@@ -36,9 +36,9 @@ export const projectGalleryData = [
     },
     {
         id: 6,
-        title: 'Expensepilot Web Design',
-        category: 'Web Design',
-        image: '/Images/Portfolio/figma/Expensepilot.webp',
+        title: 'Company Foundation Animation',
+        category: '2D Motion',
+        image: '/Images/Portfolio/2d/Company Foundation.mp4',
         url: '#'
     },
     {
@@ -74,6 +74,13 @@ export const projectGalleryData = [
         title: 'Dussehra-Animation',
         category: '2D Motion',
         image: '/Images/Portfolio/2d/Dussehra-Animation=2.mp4',
+        url: '#'
+    },
+    {
+        id: 6,
+        title: 'Expensepilot Web Design',
+        category: 'Web Design',
+        image: '/Images/Portfolio/figma/Expensepilot.webp',
         url: '#'
     }
 ];
