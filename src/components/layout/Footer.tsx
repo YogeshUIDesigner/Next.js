@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useState } from 'react';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
 const footerLinks = {
@@ -9,31 +10,31 @@ const footerLinks = {
         { href: '/about', label: 'About Us' },
         { href: '/how-it-works', label: 'How It Works' },
         { href: '/portfolio', label: 'Portfolio' },
-        { href: '/programs', label: 'Programs' },
+        { href: '/contact', label: 'Contact Us' },
     ],
     support: [
         { href: '#', label: 'Help Center' },
-        { href: '#', label: 'Contact Us' },
+        { href: '/contact', label: 'Contact' },
         { href: '#', label: 'FAQ' },
     ],
 };
 
 const socialLinks = [
     {
-        name: 'Twitter',
-        href: '#',
+        name: 'Linkedin',
+        href: 'https://www.linkedin.com/in/yogesh-mahor-826507259/',
         icon: (
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 18 18">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
             </svg>
         ),
     },
     {
-        name: 'Discord',
-        href: '#',
+        name: 'Instagram',
+        href: 'https://www.instagram.com/graphicsdesigner98/',
         icon: (
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 18 18">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
             </svg>
         ),
     },
@@ -58,6 +59,42 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+    const [email, setEmail] = useState('');
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('loading');
+
+        try {
+            const formData = new FormData();
+            formData.append('access_key', '59ee0ef6-110f-4439-92c8-936ce8636abf');
+            formData.append('email', email);
+            formData.append('subject', 'New Newsletter Subscription');
+            formData.append('message', `New subscriber: ${email}`);
+            formData.append('from_name', 'Yogesh Designer Portfolio');
+
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setStatus('success');
+                setEmail('');
+                // Reset success message after 5 seconds
+                setTimeout(() => setStatus('idle'), 5000);
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error('Subscription error:', error);
+            setStatus('error');
+        }
+    };
+
     return (
         <footer className="relative pt-20 pb-8 overflow-hidden">
             {/* Background gradient */}
@@ -71,30 +108,44 @@ export default function Footer() {
                 {/* Newsletter Section */}
                 <ScrollReveal>
                     <div className="glass-card rounded-2xl p-8 md:p-12 mb-16">
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                        <form onSubmit={handleSubmit} className="flex flex-col md:flex-row items-center justify-between gap-8 w-full">
                             <div>
                                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
                                     Stay Updated
                                 </h3>
                                 <p className="text-gray-400">
-                                    Get the latest news and trading insights delivered to your inbox.
+                                    Get the latest design news and project updates delivered to your inbox.
                                 </p>
                             </div>
-                            <div className="flex w-full md:w-auto gap-3">
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    className="flex-1 md:w-80 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-accent-blue/50 transition-colors"
-                                />
-                                <motion.button
-                                    className="px-6 py-3 bg-gradient-to-r from-accent-blue to-accent-cyan text-white font-semibold rounded-xl whitespace-nowrap"
-                                    whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(59, 130, 246, 0.5)' }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    Subscribe
-                                </motion.button>
+                            <div className="flex flex-col w-full md:w-auto gap-3">
+                                <div className="flex flex-col sm:flex-row gap-3">
+                                    <input
+                                        type="email"
+                                        required
+                                        placeholder="Enter your email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="w-full md:w-80 px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-accent-blue/50 transition-colors"
+                                        disabled={status === 'loading' || status === 'success'}
+                                    />
+                                    <motion.button
+                                        type="submit"
+                                        className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-accent-blue to-accent-cyan text-white font-semibold rounded-xl whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed"
+                                        whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(59, 130, 246, 0.5)' }}
+                                        whileTap={{ scale: 0.98 }}
+                                        disabled={status === 'loading' || status === 'success'}
+                                    >
+                                        {status === 'loading' ? 'Subscribing...' : status === 'success' ? 'Subscribed!' : 'Subscribe'}
+                                    </motion.button>
+                                </div>
+                                {status === 'success' && (
+                                    <p className="text-accent-green text-sm ml-1">Thanks for subscribing!</p>
+                                )}
+                                {status === 'error' && (
+                                    <p className="text-red-400 text-sm ml-1">Something went wrong. Please try again.</p>
+                                )}
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </ScrollReveal>
 
@@ -113,7 +164,7 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-gray-400 mb-6 max-w-sm">
-                            Empowering traders with funded accounts and the tools they need to succeed in the futures markets.
+                            Empowering brands with high-end UI/UX, 3D animations, and creative visual solutions.
                         </p>
                         {/* Social Links */}
                         <div className="flex gap-3">
@@ -124,6 +175,7 @@ export default function Footer() {
                                     className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-accent-cyan hover:border-accent-cyan/50 transition-colors"
                                     whileHover={{ scale: 1.1, y: -2 }}
                                     whileTap={{ scale: 0.95 }}
+                                    target="_blank"
                                 >
                                     {social.icon}
                                 </motion.a>

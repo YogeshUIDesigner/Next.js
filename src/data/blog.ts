@@ -1,30 +1,30 @@
-export const categories = ['All', 'Trading Basics', 'Advanced Strategies', 'Risk Management', 'Market Analysis'];
+export const categories = ['All', 'UI/UX Design', '3D Animation', 'Motion Graphics', 'Design Process'];
 
 export const blogPosts = [
     {
         id: 1,
-        slug: 'mastering-price-action',
-        title: 'Mastering Price Action Trading',
-        excerpt: 'A comprehensive guide to understanding price movement without indicators.',
+        slug: 'mastering-glassmorphism',
+        title: 'Mastering Glassmorphism in Modern Web Design',
+        excerpt: 'How to create depth and premium feel using glass effects in your UI.',
         content: `
-# Mastering Price Action Trading
+# Mastering Glassmorphism in Modern Web Design
 
-Price action trading is the discipline of making trading decisions based on the actual price movement on a chart, rather than relying on indicators.
+Glassmorphism is a design trend that has taken the digital world by storm. It focuses on background blur, transparency, and multi-layered approach to create a "glass-like" feel.
 
-## Why Price Action?
+## Why Use Glassmorphism?
 
-Indicators are lagging by nature. Price action is real-time. By understanding how price moves, you can identify high-probability entries and exits before the indicators even react.
+It creates a sense of depth and hierarchy without relying on heavy shadows. It feels light, airy, and premium when used correctly with vibrant backgrounds.
 
-### Key Concepts
-1. **Support and Resistance**: Identifying levels where price has historically reversed.
-2. **Trend Analysis**: Understanding if the market is making higher highs or lower lows.
-3. **Candlestick Patterns**: Reading the psychology behind each candle.
+### Key Principles
+1. **Background Blur**: The core of the effect. Use around 10-20px for the best results.
+2. **Subtle Borders**: A very thin, semi-transparent white border helps define the edges.
+3. **Multi-layering**: Stack different glass elements to create complex, interesting UI.
 
-Price action trading requires patience and discipline, but it is one of the most powerful tools in a trader's arsenal.
+When combined with smooth animations, glassmorphism can elevate any digital product.
         `,
-        category: 'Advanced Strategies',
-        publishedAt: 'Dec 28, 2023',
-        readTime: '8 min read',
+        category: 'UI/UX Design',
+        publishedAt: 'Jan 05, 2024',
+        readTime: '6 min read',
         author: {
             name: 'Yogesh Designer',
             avatar: '#'
@@ -32,30 +32,28 @@ Price action trading requires patience and discipline, but it is one of the most
     },
     {
         id: 2,
-        slug: 'intro-to-trading-psychology',
-        title: 'Introduction to Trading Psychology',
-        excerpt: 'Why your mindset is more important than your strategy.',
+        slug: '3d-branding-power',
+        title: 'The Power of 3D in Modern Branding',
+        excerpt: 'Why 3D visuals are becoming essential for brand identity in 2024.',
         content: `
-# Introduction to Trading Psychology
+# The Power of 3D in Modern Branding
 
-Trading is 10% strategy and 90% psychology. Many traders have profitable systems but fail because they cannot manage their emotions.
+As technology advances, 3D is no longer just for films and games. It is a powerful tool for visual storytelling and branding.
 
-## The Pillars of Trading Psychology
+## The Impact of 3D
 
-### 1. Discipline
-Sticking to your plan even when you are on a losing streak.
+3D elements provide a level of realism and immersion that 2D graphics cannot match. They help products stand out and feel more tangible in a digital space.
 
-### 2. Risk Management
-Never risking more than you can afford to lose. This reduces the emotional impact of a loss.
+### 3D in Branding
+* **Abstract Shapes**: Creating unique, brand-specific 3D assets.
+* **Product Visuals**: High-fidelity renders that look better than photography.
+* **Interactive 3D**: Allowing users to explore products on the web.
 
-### 3. Emotional Control
-Avoiding the trap of "revenge trading" after a loss or becoming overconfident after a win.
-
-Mastering your mind is the first step to becoming a consistently profitable trader.
+Integrating 3D into your brand strategy can significantly increase user engagement and brand recall.
         `,
-        category: 'Trading Basics',
-        publishedAt: 'Dec 25, 2023',
-        readTime: '5 min read',
+        category: '3D Animation',
+        publishedAt: 'Jan 02, 2024',
+        readTime: '7 min read',
         author: {
             name: 'Yogesh Designer',
             avatar: '#'
@@ -63,25 +61,25 @@ Mastering your mind is the first step to becoming a consistently profitable trad
     },
     {
         id: 3,
-        slug: 'risk-management-strategies',
-        title: 'Essential Risk Management Strategies',
-        excerpt: 'How to protect your capital and stay in the game long-term.',
+        slug: 'design-to-motion-workflow',
+        title: 'Workflow: From Design to Animation',
+        excerpt: 'A step-by-step guide to bringing your static designs to life with motion.',
         content: `
-# Essential Risk Management Strategies
+# Workflow: From Design to Animation
 
-The primary goal of a trader is not to make money, but to stay in the game. Without proper risk management, even the best strategy will eventually blow your account.
+The transition from a static design to a moving visual is where the magic happens. Here is how I approach the process.
 
-## Key Strategies
+## The Process
 
-* **The 1% Rule**: Never risk more than 1% of your total account balance on a single trade.
-* **Risk-to-Reward Ratio**: Aim for a minimum of 1:2. This means you make $2 for every $1 you risk.
-* **Stop Losses**: Always use a stop loss to define your maximum loss before entering a trade.
+1. **Concept & Storyboarding**: Planning the movement before touching any tools.
+2. **Asset Preparation**: Organizing Figma or Illustrator files for After Effects or Blender.
+3. **Animation & Timing**: Focusing on easing and secondary motion to create a natural feel.
 
-By implementing these strategies, you ensure that no single loss can significantly damage your capital.
+Smooth motion graphics aren't just about movement; they're about communicating a message more effectively.
         `,
-        category: 'Risk Management',
-        publishedAt: 'Dec 20, 2023',
-        readTime: '6 min read',
+        category: 'Motion Graphics',
+        publishedAt: 'Dec 28, 2023',
+        readTime: '5 min read',
         author: {
             name: 'Yogesh Designer',
             avatar: '#'

@@ -12,35 +12,55 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Yogesh Designer - Ui/Ux & Graphic Designer",
+  metadataBase: new URL('https://www.yogeshdesigner.in'),
+  title: {
+    default: "Yogesh Designer - UI/UX & Graphic Designer",
+    template: "%s | Yogesh Designer"
+  },
   description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs. Logos, websites & app UI by Yogesh Oneness.",
-  keywords: ["graphic designer", "ui ux designer", "freelance graphic designer", "ui ux designer india", "professional graphic designer", "creative graphic designer", "web & app designer", "brand identity designer", "digital designer", "visual designer"],
-  authors: [{ name: "Yogesh Designer" }],
+  keywords: ["graphic designer", "ui ux designer", "freelance graphic designer", "ui ux designer india", "professional graphic designer", "creative graphic designer", "web & app designer", "brand identity designer", "digital designer", "visual designer", "next.js developer", "tailwindcss", "portfolio", "creative portfolio"],
+  authors: [{ name: "Yogesh Designer", url: "https://www.yogeshdesigner.in" }],
+  creator: "Yogesh Designer",
+  publisher: "Yogesh Designer",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.yogeshdesigner.in/",
-    siteName: "YogeshDesigner",
-    title: "Yogesh Designer - Ui/Ux & Graphic Designer",
+    siteName: "Yogesh Designer",
+    title: "Yogesh Designer - UI/UX & Graphic Designer",
     description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs. Logos, websites & app UI by Yogesh Oneness.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Yogesh Designer - Ui/Ux & Graphic Designer",
+        alt: "Yogesh Designer - UI/UX & Graphic Designer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yogesh Designer - Ui/Ux & Graphic Designer",
-    description: "Graphic Designer",
+    title: "Yogesh Designer - UI/UX & Graphic Designer",
+    description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs. Logos, websites & app UI by Yogesh Oneness.",
     images: ["/og-image.jpg"],
+    creator: "@yogeshdesigner",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -52,9 +72,27 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Yogesh Designer",
+              url: "https://www.yogeshdesigner.in",
+              jobTitle: "UI/UX & Graphic Designer",
+              sameAs: [
+                "https://www.instagram.com/yogeshdesigner",
+                "https://www.linkedin.com/in/yogeshdesigner",
+                // Add other social links here
+              ],
+              description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs.",
+            }),
+          }}
+        />
         <ParticleBackground />
         <Navbar />
-        <main className="relative z-10">
+        <main className="relative z-10 overflow-x-hidden">
           {children}
         </main>
         <Footer />

@@ -33,13 +33,13 @@ export default function AcademyPage() {
                                 className="inline-block px-4 py-1.5 rounded-full bg-accent-purple/10 border border-accent-purple/20 text-accent-purple text-sm font-medium mb-4"
                                 whileHover={{ scale: 1.05 }}
                             >
-                                Trading Academy
+                                Creative Academy
                             </motion.span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                                Learn to Trade <span className="gradient-text">Like a Pro</span>
+                                Master Modern <span className="gradient-text">Design</span>
                             </h1>
                             <p className="text-lg text-gray-400">
-                                Educational resources, strategies, and insights from professional traders to help you succeed.
+                                Educational resources, tutorials, and insights into UI/UX, 3D modeling, and motion graphics.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -200,10 +200,10 @@ export default function AcademyPage() {
                     <ScrollReveal>
                         <div className="glass-card rounded-3xl p-8 md:p-12 text-center">
                             <h2 className="text-3xl font-bold text-white mb-4">
-                                Stay Updated with Trading Insights
+                                Stay Updated with Design Insights
                             </h2>
                             <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                                Subscribe to our newsletter for weekly trading tips, market analysis, and exclusive educational content.
+                                Subscribe to our newsletter for weekly design tips, project breakdowns, and exclusive creative content.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                                 <input
