@@ -63,6 +63,13 @@ export const projectGalleryData = [
         url: '#'
     },
     {
+        id: 15,
+        title: 'The Secret to Successful',
+        category: 'Flyer Design',
+        image: '/Images/Portfolio/Flayer/The secret to successful.webp',
+        url: '#'
+    },
+    {
         id: 10,
         title: 'Animated  GIF',
         category: 'GIF',
@@ -77,12 +84,41 @@ export const projectGalleryData = [
         url: '#'
     },
     {
-        id: 6,
+        id: 12,
+        title: 'Book Cover Design',
+        category: 'Flyer Design',
+        image: '/Images/Portfolio/Flayer/Book Cover Design.webp',
+        url: '#'
+    },
+    {
+        id: 13,
         title: 'Expensepilot Web Design',
         category: 'Web Design',
         image: '/Images/Portfolio/figma/Expensepilot.webp',
         url: '#'
-    }
+    },
+    {
+        id: 14,
+        title: 'Its Always Darkest Before The Dawn',
+        category: 'Flyer Design',
+        image: '/Images/Portfolio/Flayer/darkest before the dawn.webp',
+        url: '#',
+        alt: 'its always darkest before the dawn'
+    },
+    {
+        id: 16,
+        title: 'Book Cover',
+        category: 'Flyer Design',
+        image: '/Images/Portfolio/Flayer/Book Cover.webp',
+        url: '#'
+    },
+    {
+        id: 17,
+        title: 'Boost Your Business',
+        category: 'Flyer Design',
+        image: '/Images/Portfolio/Flayer/Boost.webp',
+        url: '#'
+    },
 ];
 
-export const GALLERY_CATEGORIES = ['All', '3D Motion', '2D Motion', 'Web Design', 'GIF'];
+export const GALLERY_CATEGORIES = ['All', '3D Motion', '2D Motion', 'Web Design', 'Flyer Design', 'GIF'];

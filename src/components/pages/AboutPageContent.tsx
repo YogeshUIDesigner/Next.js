@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import StaggerContainer, { StaggerItem } from '@/components/animations/StaggerContainer';
+import LogoSlider from '../sections/LogoSlider';
 import {
     RocketLaunchIcon,
     UsersIcon,
@@ -94,6 +95,7 @@ export default function AboutPageContent() {
             </section>
 
             {/* Story */}
+            <LogoSlider />
             <section className="relative py-24 bg-primary-light/20">
                 <div className="container-custom">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">

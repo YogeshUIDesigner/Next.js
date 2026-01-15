@@ -1,5 +1,5 @@
 import Hero from "@/components/sections/Hero";
-import Stats from "@/components/sections/Stats";
+import HomeAbout from "@/components/sections/HomeAbout";
 import LiveProjects from "@/components/sections/LiveProjects";
 import ProjectGallery from "@/components/sections/ProjectGallery";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
@@ -8,6 +8,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import ContactForm from "@/components/sections/ContactForm";
 import FAQ from "@/components/sections/FAQ";
 import CTA from "@/components/sections/CTA";
+import LogoSlider from "@/components/sections/LogoSlider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,6 +21,8 @@ export default function Home() {
     <>
       <Hero />
       {/* <Stats /> */}
+      <LogoSlider />
+      <HomeAbout />
       <LiveProjects />
       <ProjectGallery />
       <WhyChooseUs />
