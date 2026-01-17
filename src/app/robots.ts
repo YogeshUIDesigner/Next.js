@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://www.yogeshdesigner.in/sitemap.xml',
+        sitemap: 'https://yogeshdesigner.in/sitemap.xml',
     };
 }

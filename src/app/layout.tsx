@@ -12,14 +12,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.yogeshdesigner.in'),
+  metadataBase: new URL('https://yogeshdesigner.in'),
   title: {
     default: "Yogesh Designer - UI/UX & Graphic Designer",
     template: "%s | Yogesh Designer"
   },
   description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs. Logos, websites & app UI by Yogesh Oneness.",
   keywords: ["graphic designer", "ui ux designer", "freelance graphic designer", "ui ux designer india", "professional graphic designer", "creative graphic designer", "web & app designer", "brand identity designer", "digital designer", "visual designer", "next.js developer", "tailwindcss", "portfolio", "creative portfolio"],
-  authors: [{ name: "Yogesh Designer", url: "https://www.yogeshdesigner.in" }],
+  authors: [{ name: "Yogesh Designer", url: "https://yogeshdesigner.in" }],
   creator: "Yogesh Designer",
   publisher: "Yogesh Designer",
   icons: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.yogeshdesigner.in/",
+    url: "https://yogeshdesigner.in/",
     siteName: "Yogesh Designer",
     title: "Yogesh Designer - UI/UX & Graphic Designer",
     description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs. Logos, websites & app UI by Yogesh Oneness.",
@@ -79,7 +79,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Yogesh Designer",
-              url: "https://www.yogeshdesigner.in",
+              url: "https://yogeshdesigner.in",
               jobTitle: "UI/UX & Graphic Designer",
               sameAs: [
                 "https://www.instagram.com/yogeshdesigner",
