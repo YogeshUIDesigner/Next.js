@@ -68,11 +68,11 @@ export default function Testimonials() {
                             Success Stories
                         </motion.span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                        What Clients Say About <span className="gradient-text">My Work</span>
+                            What Clients Say About <span className="gradient-text">My Work</span>
                         </h2>
                         <p className="text-gray-400 max-w-2xl mx-auto">
-                        Real clients, real projects.
-                        Here’s what people say about working with me and the results I deliver.
+                            Real clients, real projects.
+                            Here’s what people say about working with me and the results I deliver.
                         </p>
                     </div>
                 </ScrollReveal>
@@ -160,9 +160,9 @@ export default function Testimonials() {
                                             {currentTestimonial.name.charAt(0)}
                                         </div>
                                         <div className="text-left">
-                                            <h4 className="text-white font-semibold">
+                                            <h3 className="text-white font-semibold">
                                                 {currentTestimonial.name}
-                                            </h4>
+                                            </h3>
                                             <p className="text-gray-400 text-sm">
                                                 {currentTestimonial.role}
                                             </p>
@@ -182,8 +182,8 @@ export default function Testimonials() {
                                         setCurrentIndex(index);
                                     }}
                                     className={`w-3 h-3 rounded-full transition-all ${index === currentIndex
-                                            ? 'bg-accent-cyan w-8'
-                                            : 'bg-white/20 hover:bg-white/40'
+                                        ? 'bg-accent-cyan w-8'
+                                        : 'bg-white/20 hover:bg-white/40'
                                         }`}
                                     whileHover={{ scale: 1.2 }}
                                     whileTap={{ scale: 0.9 }}

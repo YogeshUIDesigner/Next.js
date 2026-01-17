@@ -45,9 +45,9 @@ export default function Accordion({ items, allowMultiple = false, className = ''
                         className="w-full px-6 py-5 flex items-center justify-between text-left group"
                         whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.02)' }}
                     >
-                        <span className="text-lg font-medium text-white group-hover:text-accent-blue transition-colors">
+                        <h3 className="text-lg font-medium text-white group-hover:text-accent-blue transition-colors">
                             {item.question}
-                        </span>
+                        </h3>
                         <motion.span
                             animate={{ rotate: openItems.includes(item.id) ? 180 : 0 }}
                             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}

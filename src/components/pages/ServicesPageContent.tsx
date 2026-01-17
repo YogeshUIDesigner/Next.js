@@ -99,7 +99,7 @@ export default function ServicesPageContent() {
                                         <div className="w-14 h-14 rounded-xl bg-primary-light border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                                             <Icon className="w-8 h-8 text-accent-cyan" />
                                         </div>
-                                        <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                                        <h2 className="text-xl font-bold text-white mb-3">{service.title}</h2>
                                         <p className="text-gray-400 mb-6 text-sm leading-relaxed">
                                             {service.description}
                                         </p>

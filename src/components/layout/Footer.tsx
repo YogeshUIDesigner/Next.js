@@ -186,7 +186,7 @@ export default function Footer() {
 
                     {/* Company Links */}
                     <ScrollReveal delay={0.1}>
-                        <h4 className="text-white font-semibold mb-4">Company</h4>
+                        <h3 className="text-white font-semibold mb-4">Company</h3>
                         <ul className="space-y-3">
                             {footerLinks.company.map((link) => (
                                 <li key={link.href}>
@@ -203,7 +203,7 @@ export default function Footer() {
 
                     {/* Support Links */}
                     <ScrollReveal delay={0.2}>
-                        <h4 className="text-white font-semibold mb-4">Support</h4>
+                        <h3 className="text-white font-semibold mb-4">Support</h3>
                         <ul className="space-y-3">
                             {footerLinks.support.map((link) => (
                                 <li key={link.label}>
