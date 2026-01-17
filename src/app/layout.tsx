@@ -4,7 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingSocial from "@/components/ui/FloatingSocial";
-import ParticleBackground from "@/components/animations/ParticleBackground";
+import dynamic from "next/dynamic";
+const ParticleBackground = dynamic(() => import("@/components/animations/ParticleBackground"));
 
 const inter = Inter({
   subsets: ["latin"],

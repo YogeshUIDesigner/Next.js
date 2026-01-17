@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic';
 import Hero from "@/components/sections/Hero";
-import LogoSlider from "@/components/sections/LogoSlider";
 import { Metadata } from "next";
+
+const LogoSlider = dynamic(() => import("@/components/sections/LogoSlider"));
 
 // Lazy load below-the-fold components with placeholders to prevent CLS
 const HomeAbout = dynamic(() => import("@/components/sections/HomeAbout"), { loading: () => <div className="h-96" /> });
