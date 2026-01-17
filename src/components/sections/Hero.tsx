@@ -44,43 +44,40 @@ export default function Hero() {
             <div className="absolute inset-0 z-0">
                 {/* Main gradient orbs */}
                 <motion.div
-                    className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/30 blur-[150px]"
+                    className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/20 blur-[100px]"
                     animate={{
-                        x: [0, 50, 0],
-                        y: [0, 30, 0],
-                        scale: [1, 1.1, 1],
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                    }}
-                />
-                <motion.div
-                    className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/20 blur-[120px]"
-                    animate={{
-                        x: [0, -40, 0],
-                        y: [0, -30, 0],
-                        scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                        duration: 10,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                        delay: 1,
-                    }}
-                />
-                <motion.div
-                    className="absolute bottom-1/4 left-1/2 w-[400px] h-[400px] rounded-full bg-accent-green/15 blur-[100px]"
-                    animate={{
-                        x: [0, 60, 0],
-                        y: [0, -40, 0],
-                        scale: [1, 1.15, 1],
+                        x: [0, 40, 0],
+                        y: [0, 20, 0],
                     }}
                     transition={{
                         duration: 12,
                         repeat: Infinity,
-                        ease: 'easeInOut',
+                        ease: 'linear',
+                    }}
+                />
+                <motion.div
+                    className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/15 blur-[80px]"
+                    animate={{
+                        x: [0, -30, 0],
+                        y: [0, -20, 0],
+                    }}
+                    transition={{
+                        duration: 15,
+                        repeat: Infinity,
+                        ease: 'linear',
+                        delay: 1,
+                    }}
+                />
+                <motion.div
+                    className="absolute bottom-1/4 left-1/2 w-[400px] h-[400px] rounded-full bg-accent-green/10 blur-[70px]"
+                    animate={{
+                        x: [0, 45, 0],
+                        y: [0, -35, 0],
+                    }}
+                    transition={{
+                        duration: 18,
+                        repeat: Infinity,
+                        ease: 'linear',
                         delay: 2,
                     }}
                 />

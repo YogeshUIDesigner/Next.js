@@ -34,29 +34,27 @@ export default function ParticleBackground() {
             {!isMobile && (
                 <>
                     <motion.div
-                        className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/15 blur-[120px]"
+                        className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/10 blur-[80px]"
                         animate={{
-                            x: [0, 50, 0],
-                            y: [0, 25, 0],
-                            scale: [1, 1.1, 1],
+                            x: [0, 40, 0],
+                            y: [0, 20, 0],
                         }}
                         transition={{
                             duration: 25,
                             repeat: Infinity,
-                            ease: 'easeInOut',
+                            ease: 'linear',
                         }}
                     />
                     <motion.div
-                        className="absolute top-1/2 -right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/10 blur-[100px]"
+                        className="absolute top-1/2 -right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/8 blur-[60px]"
                         animate={{
-                            x: [0, -40, 0],
-                            y: [0, -30, 0],
-                            scale: [1, 1.15, 1],
+                            x: [0, -30, 0],
+                            y: [0, -25, 0],
                         }}
                         transition={{
                             duration: 22,
                             repeat: Infinity,
-                            ease: 'easeInOut',
+                            ease: 'linear',
                             delay: 2,
                         }}
                     />
