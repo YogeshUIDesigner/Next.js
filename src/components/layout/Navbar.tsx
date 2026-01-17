@@ -13,10 +13,10 @@ import Button from '@/components/ui/Button';
 
 const navLinks = [
     { href: '/', label: 'Home' },
+    { href: '/services', label: 'Services' },
     { href: '/about', label: 'About' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/how-it-works', label: 'How It Works' },
-
 ];
 
 export default function Navbar() {
@@ -83,7 +83,7 @@ export default function Navbar() {
                             </motion.span>
                             <motion.span
                                 className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-accent-blue to-accent-cyan"
-                                initial={{ width: pathname === link.href ? '100%' : '0%' }}
+                                animate={{ width: pathname === link.href ? '100%' : '0%' }}
                                 whileHover={{ width: '100%' }}
                                 transition={{ duration: 0.3 }}
                             />

@@ -14,10 +14,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://yogeshdesigner.in'),
   title: {
-    default: "Yogesh Designer - UI/UX & Graphic Designer",
+    default: "Yogesh Designer - UI/UX & Graphic Designer in India",
     template: "%s | Yogesh Designer"
   },
-  description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs. Logos, websites & app UI by Yogesh Oneness.",
+  description: "Award-winning UI/UX Designer in India specializing in modern websites, dashboards, and mobile apps. Hire a freelance designer for premium visual identity.",
   keywords: ["graphic designer", "ui ux designer", "freelance graphic designer", "ui ux designer india", "professional graphic designer", "creative graphic designer", "web & app designer", "brand identity designer", "digital designer", "visual designer", "next.js developer", "tailwindcss", "portfolio", "creative portfolio"],
   authors: [{ name: "Yogesh Designer", url: "https://yogeshdesigner.in" }],
   creator: "Yogesh Designer",
@@ -75,19 +75,49 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Yogesh Designer",
-              url: "https://yogeshdesigner.in",
-              jobTitle: "UI/UX & Graphic Designer",
-              sameAs: [
-                "https://www.instagram.com/yogeshdesigner",
-                "https://www.linkedin.com/in/yogeshdesigner",
-                // Add other social links here
-              ],
-              description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs.",
-            }),
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                name: "Yogesh Designer",
+                url: "https://yogeshdesigner.in",
+                jobTitle: "UI/UX & Graphic Designer",
+                sameAs: [
+                  "https://www.instagram.com/yogeshdesigner",
+                  "https://www.linkedin.com/in/yogeshdesigner",
+                ],
+                description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs.",
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "name": "Yogesh Designer",
+                "image": "https://yogeshdesigner.in/og-image.jpg",
+                "url": "https://yogeshdesigner.in",
+                "telephone": "",
+                "priceRange": "$$",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "IN"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "addressCountry": "IN"
+                },
+                "openingHoursSpecification": {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                  ],
+                  "opens": "09:00",
+                  "closes": "18:00"
+                }
+              }
+            ]),
           }}
         />
         <ParticleBackground />

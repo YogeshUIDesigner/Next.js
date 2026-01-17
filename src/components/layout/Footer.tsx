@@ -8,6 +8,7 @@ import ScrollReveal from '@/components/animations/ScrollReveal';
 const footerLinks = {
     company: [
         { href: '/about', label: 'About Us' },
+        { href: '/services', label: 'Services' },
         { href: '/how-it-works', label: 'How It Works' },
         { href: '/portfolio', label: 'Portfolio' },
         { href: '/contact', label: 'Contact Us' },
@@ -218,21 +219,18 @@ export default function Footer() {
                     </ScrollReveal>
                 </div>
 
-                {/* Bottom Bar */}
-                <ScrollReveal>
-                    <div className="pt-8 border-t border-white/10">
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                            <p className="text-gray-500 text-sm text-center md:text-left">
-                                © 2026 yogeshdesigner.in All rights reserved.
-                            </p>
-                            <div className="flex items-center gap-6">
-                                <span className="text-gray-500 text-sm">
-                                    Great design sets the foundation—results grow with strategy and execution.
-                                </span>
-                            </div>
+                <div className="pt-8 border-t border-white/10">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <p className="text-gray-500 text-sm text-center md:text-left">
+                            © 2026 yogeshdesigner.in All rights reserved.
+                        </p>
+                        <div className="flex items-center gap-6">
+                            <span className="text-gray-500 text-sm">
+                                Designed with <span className="text-red-500">❤️</span> in India
+                            </span>
                         </div>
                     </div>
-                </ScrollReveal>
+                </div>
             </div>
         </footer>
     );

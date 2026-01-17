@@ -12,7 +12,7 @@ import LogoSlider from "@/components/sections/LogoSlider";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Yogesh Designer | Creative UI/UX & Graphic Design Portfolio",
+  title: "UI/UX Designer in India | Yogesh Designer - Web & Mobile Apps",
   description: "Welcome to the official portfolio of Yogesh Designer. Explore my latest work in UI/UX design, branding, and motion graphics.",
 };
 
