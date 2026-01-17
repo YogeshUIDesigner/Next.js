@@ -27,8 +27,8 @@ export default function LogoSlider() {
                 <div className="absolute right-0 top-0 bottom-0 w-12 md:w-20 bg-gradient-to-l from-primary to-transparent z-10" />
 
                 <motion.div
-                    className="flex gap-8 md:gap-16 items-center flex-nowrap whitespace-nowrap will-change-transform"
-                    animate={{ x: ["0%", "-50%"] }} // Move halfway, since we have 2 full sets (original + duplicate) * 2 to fill screen
+                    className="flex items-center flex-nowrap whitespace-nowrap will-change-transform"
+                    animate={{ x: ["0%", "-50%"] }}
                     transition={{
                         x: {
                             repeat: Infinity,
@@ -39,18 +39,16 @@ export default function LogoSlider() {
                     }}
                     style={{ width: "fit-content" }}
                 >
-                    {/* Render enough sets to cover the screen and scroll smoothly.
-                        Using 4 sets: Set 1 & 2 are sliding, Set 3 & 4 follow.
-                        Actually, simplest infinite loop is 2 identical sets.
-                        If width is large, we might need more duplication.
-                        Let's do 4 sets to be safe on ultra-wide screens.
-                        The animation moves -25% if we have 4 sets?
-                        Actually if we have [A, A] and we move from 0% to -50%, it loops perfect.
-                     */}
+                    {/* 
+                      FIX: Using margin-right on items instead of parent flex-gap.
+                      Flex-gap causes a math error in infinite loops because the last item doesn't have a gap after it,
+                      making the first half width different from the second half width.
+                      By using margin-right on EVERY item, we ensure consistent spacing and a perfect loop.
+                    */}
                     {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
                         <div
                             key={`${logo.name}-${index}`}
-                            className="relative w-24 md:w-32 h-12 md:h-16 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                            className="relative w-24 md:w-32 h-12 md:h-16 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 mr-8 md:mr-16"
                         >
                             <Image
                                 src={logo.src}
