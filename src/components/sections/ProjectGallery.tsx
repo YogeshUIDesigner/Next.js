@@ -73,14 +73,18 @@ export default function ProjectGallery() {
                                         {project.image.trim().endsWith('.mp4') || project.image.trim().match(/\.(mp4|webm|ogg)$/i) ? (
                                             <video
                                                 key={project.image}
-                                                controls
                                                 muted
                                                 loop
                                                 playsInline
-                                                preload="none"
-                                                className="w-full h-full object-cover"
+                                                preload="metadata"
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-110"
+                                                onMouseEnter={(e) => e.currentTarget.play()}
+                                                onMouseLeave={(e) => {
+                                                    e.currentTarget.pause();
+                                                    e.currentTarget.currentTime = 0.5;
+                                                }}
                                             >
-                                                <source src={project.image} type="video/mp4" />
+                                                <source src={`${project.image}#t=0.5`} type="video/mp4" />
                                             </video>
                                         ) : (
                                             <Image
