@@ -3,7 +3,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import { projectGalleryData, GALLERY_CATEGORIES } from '@/data/projectGallery';
@@ -73,26 +72,19 @@ export default function ProjectGallery() {
                                         {project.image.trim().endsWith('.mp4') || project.image.trim().match(/\.(mp4|webm|ogg)$/i) ? (
                                             <video
                                                 key={project.image}
+                                                controls
                                                 muted
                                                 loop
                                                 playsInline
-                                                preload="metadata"
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-110"
-                                                onMouseEnter={(e) => e.currentTarget.play()}
-                                                onMouseLeave={(e) => {
-                                                    e.currentTarget.pause();
-                                                    e.currentTarget.currentTime = 0.5;
-                                                }}
+                                                className="w-full h-full object-cover"
                                             >
-                                                <source src={`${project.image}#t=0.5`} type="video/mp4" />
+                                                <source src={project.image} type="video/mp4" />
                                             </video>
                                         ) : (
-                                            <Image
+                                            <motion.img
                                                 src={project.image}
                                                 alt={project.title}
-                                                fill
-                                                className="object-cover project-image-scroll"
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                className="w-full h-full object-cover project-image-scroll"
                                             />
                                         )}
 

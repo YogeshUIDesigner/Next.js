@@ -15,13 +15,13 @@ export default function ParticleBackground() {
         checkMobile();
         window.addEventListener('resize', checkMobile);
 
-        const particleCount = window.innerWidth < 768 ? 8 : 15;
+        const particleCount = window.innerWidth < 768 ? 12 : 20;
         const newParticles = Array.from({ length: particleCount }, (_, i) => ({
             id: i,
             x: Math.random() * 100,
-            delay: Math.random() * 15,
-            duration: 25 + Math.random() * 15,
-            size: 1.5 + Math.random() * 2,
+            delay: Math.random() * 20,
+            duration: 20 + Math.random() * 20,
+            size: 2 + Math.random() * 3,
         }));
         setParticles(newParticles);
 
