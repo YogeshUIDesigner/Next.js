@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
@@ -126,10 +127,12 @@ export default function LiveProjects() {
                                                 >
                                                     {/* Project Image */}
                                                     <div className="relative aspect-[16/10] overflow-hidden">
-                                                        <motion.img
+                                                        <Image
                                                             src={project.image}
                                                             alt={project.title}
-                                                            className="w-full h-full object-cover project-image-scroll"
+                                                            fill
+                                                            className="object-cover project-image-scroll"
+                                                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                                         />
 
                                                         {/* Live badge - Cleaner design */}

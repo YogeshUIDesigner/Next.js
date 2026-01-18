@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import { projectGalleryData, GALLERY_CATEGORIES } from '@/data/projectGallery';
@@ -76,15 +77,18 @@ export default function ProjectGallery() {
                                                 muted
                                                 loop
                                                 playsInline
+                                                preload="none"
                                                 className="w-full h-full object-cover"
                                             >
                                                 <source src={project.image} type="video/mp4" />
                                             </video>
                                         ) : (
-                                            <motion.img
+                                            <Image
                                                 src={project.image}
                                                 alt={project.title}
-                                                className="w-full h-full object-cover project-image-scroll"
+                                                fill
+                                                className="object-cover project-image-scroll"
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                         )}
 

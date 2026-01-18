@@ -42,43 +42,30 @@ export default function Hero() {
         >
             {/* Animated Background */}
             <div className="absolute inset-0 z-0">
-                {/* Main gradient orbs */}
+                {/* Main gradient orbs - Reduced count and simplified for performance */}
                 <motion.div
-                    className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/20 blur-[100px]"
+                    className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full bg-accent-blue/10 blur-[100px]"
                     animate={{
-                        x: [0, 40, 0],
-                        y: [0, 20, 0],
+                        x: [0, 20, 0],
+                        y: [0, 10, 0],
                     }}
                     transition={{
-                        duration: 12,
+                        duration: 20,
                         repeat: Infinity,
                         ease: 'linear',
                     }}
                 />
                 <motion.div
-                    className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/15 blur-[80px]"
+                    className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-accent-cyan/10 blur-[80px]"
                     animate={{
-                        x: [0, -30, 0],
-                        y: [0, -20, 0],
+                        x: [0, -15, 0],
+                        y: [0, -10, 0],
                     }}
                     transition={{
-                        duration: 15,
+                        duration: 25,
                         repeat: Infinity,
                         ease: 'linear',
                         delay: 1,
-                    }}
-                />
-                <motion.div
-                    className="absolute bottom-1/4 left-1/2 w-[400px] h-[400px] rounded-full bg-accent-green/10 blur-[70px]"
-                    animate={{
-                        x: [0, 45, 0],
-                        y: [0, -35, 0],
-                    }}
-                    transition={{
-                        duration: 18,
-                        repeat: Infinity,
-                        ease: 'linear',
-                        delay: 2,
                     }}
                 />
 
@@ -97,47 +84,22 @@ export default function Hero() {
                 {/* Radial gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-radial from-transparent via-primary/50 to-primary" />
 
-                {/* Background Icons */}
-                <div className="hero-background-icons">
+                {/* Background Icons - Static on mobile, animated on desktop with simplified logic */}
+                <div className="hero-background-icons hidden md:block">
                     <motion.div className="floating-icon icon-figma" style={getParallaxStyle(0.05)}>
-                        <motion.div
-                            animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                            <SiFigma />
-                        </motion.div>
+                        <SiFigma />
                     </motion.div>
                     <motion.div className="floating-icon icon-ps" style={getParallaxStyle(0.04)}>
-                        <motion.div
-                            animate={{ y: [0, 15, 0], rotate: [0, -8, 0] }}
-                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                        >
-                            <SiAdobephotoshop />
-                        </motion.div>
+                        <SiAdobephotoshop />
                     </motion.div>
                     <motion.div className="floating-icon icon-ai" style={getParallaxStyle(0.03)}>
-                        <motion.div
-                            animate={{ y: [0, -15, 0], rotate: [0, 12, 0] }}
-                            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                        >
-                            <SiAdobeillustrator />
-                        </motion.div>
+                        <SiAdobeillustrator />
                     </motion.div>
                     <motion.div className="floating-icon icon-blender" style={getParallaxStyle(0.06)}>
-                        <motion.div
-                            animate={{ y: [0, 20, 0], rotate: [0, -15, 0] }}
-                            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                        >
-                            <SiBlender />
-                        </motion.div>
+                        <SiBlender />
                     </motion.div>
                     <motion.div className="floating-icon icon-ae" style={getParallaxStyle(0.02)}>
-                        <motion.div
-                            animate={{ y: [0, -10, 0], rotate: [0, 8, 0] }}
-                            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                        >
-                            <SiAdobeaftereffects />
-                        </motion.div>
+                        <SiAdobeaftereffects />
                     </motion.div>
                 </div>
             </div>
