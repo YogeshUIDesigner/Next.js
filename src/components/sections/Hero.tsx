@@ -167,9 +167,9 @@ export default function Hero() {
                 {/* Heading */}
                 <motion.h1
                     className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
-                    initial={false}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 0.5 }}
                 >
                     <span className="block">UI/UX & Graphic Designer</span>
                     <span className="block mt-2">
@@ -180,9 +180,9 @@ export default function Hero() {
                 {/* Subheading */}
                 <motion.p
                     className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10"
-                    initial={false}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                 >
                     I design modern, user-focused digital experiences that look{' '}
                     <span className="text-accent-cyan font-semibold">Premium</span> feel intuitive, and drive real results for
@@ -192,12 +192,12 @@ export default function Hero() {
                 {/* CTA Buttons */}
                 <motion.div
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-                    initial={false}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <Link href="/contact">
-                        <Button size="lg" className="min-w-[200px] group">
+                        <Button size="lg" className="min-w-[200px] group" aria-label="Contact Yogesh Designer">
                             Contact Us
                             <motion.span
                                 className="inline-block"
@@ -209,7 +209,7 @@ export default function Hero() {
                         </Button>
                     </Link>
                     <Link href="/how-it-works">
-                        <Button variant="outline" size="lg" className="min-w-[200px]">
+                        <Button variant="outline" size="lg" className="min-w-[200px]" aria-label="How we work">
                             <PlayCircleIcon className="w-5 h-5" />
                             How It Works
                         </Button>

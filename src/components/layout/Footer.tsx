@@ -174,6 +174,7 @@ export default function Footer() {
                                     key={social.name}
                                     href={social.href}
                                     className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-accent-cyan hover:border-accent-cyan/50 transition-colors"
+                                    aria-label={`Follow us on ${social.name}`}
                                     whileHover={{ scale: 1.1, y: -2 }}
                                     whileTap={{ scale: 0.95 }}
                                     target="_blank"

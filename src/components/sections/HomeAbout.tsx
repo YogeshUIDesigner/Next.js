@@ -29,7 +29,7 @@ export default function HomeAbout() {
                             </div>
 
                             <Link href="/about">
-                                <Button size="lg">Know More</Button>
+                                <Button size="lg" aria-label="Know more about our story">Know More</Button>
                             </Link>
                         </div>
                     </ScrollReveal>

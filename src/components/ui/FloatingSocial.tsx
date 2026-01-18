@@ -55,6 +55,7 @@ export default function FloatingSocial() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={`w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg shadow-black/20 ${link.color}`}
+                                aria-label={link.label}
                                 initial={{ opacity: 0, scale: 0, y: 20 }}
                                 animate={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0, y: 20 }}
@@ -79,6 +80,7 @@ export default function FloatingSocial() {
                 onClick={() => setIsOpen(!isOpen)}
                 className={`w-16 h-16 rounded-full flex items-center justify-center text-white shadow-xl shadow-black/30 transition-colors duration-300 ${isOpen ? 'bg-[#1a1f2e]' : 'bg-gradient-to-r from-accent-blue to-accent-cyan'
                     }`}
+                aria-label={isOpen ? "Close social menu" : "Open social menu"}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 layout

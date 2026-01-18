@@ -84,6 +84,7 @@ export default function Testimonials() {
                         <motion.button
                             onClick={() => paginate(-1)}
                             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 lg:-translate-x-16 z-10 w-12 h-12 rounded-full glass-card flex items-center justify-center text-white hover:text-accent-cyan transition-colors"
+                            aria-label="Previous testimonial"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -92,6 +93,7 @@ export default function Testimonials() {
                         <motion.button
                             onClick={() => paginate(1)}
                             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 lg:translate-x-16 z-10 w-12 h-12 rounded-full glass-card flex items-center justify-center text-white hover:text-accent-cyan transition-colors"
+                            aria-label="Next testimonial"
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
                         >

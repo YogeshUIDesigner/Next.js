@@ -39,8 +39,8 @@ export default function FAQ() {
 
                             {/* CTA */}
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <Link href="#">
-                                    <Button variant="outline">
+                                <Link href="/contact">
+                                    <Button variant="outline" aria-label="Contact our support team">
                                         Contact Support
                                     </Button>
                                 </Link>

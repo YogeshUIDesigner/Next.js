@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
@@ -86,6 +87,7 @@ export default function LiveProjects() {
                                 <motion.button
                                     onClick={prevSlide}
                                     className="absolute -left-4 lg:-left-8 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full glass-card flex items-center justify-center text-white hover:text-accent-cyan border border-white/10 hover:border-accent-cyan/30 transition-all shadow-2xl opacity-0 group-hover/slider:opacity-100"
+                                    aria-label="Previous project"
                                     whileHover={{ scale: 1.1, x: -4 }}
                                     whileTap={{ scale: 0.9 }}
                                 >
@@ -95,6 +97,7 @@ export default function LiveProjects() {
                                 <motion.button
                                     onClick={nextSlide}
                                     className="absolute -right-4 lg:-right-8 top-[40%] -translate-y-1/2 z-30 w-12 h-12 rounded-full glass-card flex items-center justify-center text-white hover:text-accent-cyan border border-white/10 hover:border-accent-cyan/30 transition-all shadow-2xl opacity-0 group-hover/slider:opacity-100"
+                                    aria-label="Next project"
                                     whileHover={{ scale: 1.1, x: 4 }}
                                     whileTap={{ scale: 0.9 }}
                                 >
@@ -126,10 +129,12 @@ export default function LiveProjects() {
                                                 >
                                                     {/* Project Image */}
                                                     <div className="relative aspect-[16/10] overflow-hidden">
-                                                        <motion.img
+                                                        <Image
                                                             src={project.image}
                                                             alt={project.title}
-                                                            className="w-full h-full object-cover project-image-scroll"
+                                                            fill
+                                                            className="object-cover project-image-scroll"
+                                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                         />
 
                                                         {/* Live badge - Cleaner design */}
@@ -158,6 +163,7 @@ export default function LiveProjects() {
                                                                 className="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-accent-cyan hover:text-white transition-all duration-300 shadow-lg"
                                                                 whileHover={{ scale: 1.02 }}
                                                                 whileTap={{ scale: 0.98 }}
+                                                                aria-label={`View ${project.title} project`}
                                                             >
                                                                 View Project
                                                             </motion.button>
