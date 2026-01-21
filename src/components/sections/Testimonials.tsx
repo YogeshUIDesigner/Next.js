@@ -147,12 +147,12 @@ export default function Testimonials() {
                                     </p>
 
                                     {/* Profit badge */}
-                                    <motion.div
+                                    {/* <motion.div
                                         className="inline-block px-4 py-2 rounded-full bg-accent-green/20 text-accent-green font-semibold mb-6"
                                         whileHover={{ scale: 1.05 }}
                                     >
                                         Total Profit: {currentTestimonial.profit}
-                                    </motion.div>
+                                    </motion.div> */}
 
                                     {/* Author */}
                                     <div className="flex items-center justify-center gap-4">

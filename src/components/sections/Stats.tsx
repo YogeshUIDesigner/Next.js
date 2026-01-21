@@ -75,7 +75,7 @@ export default function Stats() {
                             Trusted by <span className="gradient-text">Brands & Creators</span>
                         </h2>
                         <p className="text-gray-400 max-w-2xl mx-auto">
-                        Creating meaningful digital experiences through UI/UX, graphic design, and motion—helping brands stand out and connect better with users.
+                            Creating meaningful digital experiences through UI/UX, graphic design, and motion—helping brands stand out and connect better with users.
                         </p>
                     </div>
                 </ScrollReveal>

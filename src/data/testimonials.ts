@@ -4,7 +4,7 @@ export interface Testimonial {
     role: string;
     avatar: string;
     content: string;
-    profit: string;
+    // profit: string;
     rating: number;
 }
 
@@ -12,46 +12,46 @@ export const testimonials: Testimonial[] = [
     {
         id: '1',
         name: 'Marcus Chen',
-        role: 'Funded Trader',
+        role: 'Founder, TechStart',
         avatar: '/avatars/avatar1.jpg',
-        content: 'After trying multiple prop firms, I finally found one that actually pays. Got my first payout within 2 weeks of getting funded. The rules are fair and the support is incredible.',
-        profit: '$12,450',
+        content: 'Yogesh transformed our brand identity with stunning 3D animations and a fresh UI/UX. The results exceeded our expectations and our user engagement has skyrocketed.',
+        // profit: 'ROI: 300%',
         rating: 5,
     },
     {
         id: '2',
         name: 'Sarah Williams',
-        role: 'Full-time Trader',
+        role: 'Marketing Director',
         avatar: '/avatars/avatar2.jpg',
-        content: 'The evaluation process was straightforward. No hidden rules or tricks. I passed on my first attempt and have been consistently profitable ever since. Best decision I made for my trading career.',
-        profit: '$28,300',
+        content: 'The 2D explainer videos created for our campaign were top-notch. Clear communication, timely delivery, and a great eye for detail. Highly recommend for any motion graphics work.',
+        // profit: 'High Quality',
         rating: 5,
     },
     {
         id: '3',
         name: 'David Rodriguez',
-        role: 'Futures Trader',
+        role: 'E-commerce Owner',
         avatar: '/avatars/avatar3.jpg',
-        content: 'What sets this firm apart is their transparency. Everything is clear from day one. The dashboard is intuitive and the payout process is seamless. Highly recommend!',
-        profit: '$45,200',
+        content: 'Exceptional web design skills. Our new landing page is not only beautiful but also converts much better. The glassmorphism effects add a very premium feel.',
+        // profit: 'Conversion: +45%',
         rating: 5,
     },
     {
         id: '4',
         name: 'Emma Thompson',
-        role: 'Day Trader',
+        role: 'Creative Lead',
         avatar: '/avatars/avatar4.jpg',
-        content: 'I was skeptical at first, but the community and support convinced me. Three months in, multiple payouts received. This is the real deal for serious traders.',
-        profit: '$19,800',
+        content: "It's rare to find a designer who can handle both complex 3D modeling and clean print creatives. Yogesh is a versatile talent and a pleasure to work with.",
+        // profit: 'Versatile',
         rating: 5,
     },
     {
         id: '5',
         name: 'James Wilson',
-        role: 'Swing Trader',
+        role: 'App Developer',
         avatar: '/avatars/avatar5.jpg',
-        content: 'The scaling program is fantastic. Started with a 50K account, now trading 200K. The profit splits are among the best in the industry.',
-        profit: '$67,500',
+        content: 'The design system created for our SaaS app has saved us countless hours of development. Intuitive, modern, and perfectly aligned with our vision.',
+        // profit: 'Modern Design',
         rating: 5,
     },
 ];

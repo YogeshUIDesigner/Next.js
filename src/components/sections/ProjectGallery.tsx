@@ -8,16 +8,14 @@ import ScrollReveal from '@/components/animations/ScrollReveal';
 import { projectGalleryData, GALLERY_CATEGORIES } from '@/data/projectGallery';
 
 export default function ProjectGallery() {
-    const [projects, setProjects] = useState<any[]>(projectGalleryData);
-    const [isLoading, setIsLoading] = useState(false);
     const [activeFilter, setActiveFilter] = useState('All');
 
     const filteredProjects = useMemo(() => {
-        let results = activeFilter === 'All'
-            ? projects
-            : projects.filter(project => project.category === activeFilter);
+        const results = activeFilter === 'All'
+            ? projectGalleryData
+            : projectGalleryData.filter(project => project.category === activeFilter);
         return results.slice(0, 6);
-    }, [activeFilter, projects]);
+    }, [activeFilter]);
 
     return (
         <section className="relative py-16 md:py-24 overflow-hidden bg-primary">
@@ -49,79 +47,75 @@ export default function ProjectGallery() {
                 </ScrollReveal>
 
                 {/* Project Grid */}
-                {isLoading ? (
-                    <div className="flex justify-center items-center py-20">
-                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-accent-blue"></div>
-                    </div>
-                ) : (
-                    <motion.div
-                        layout
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 min-h-[400px]"
-                    >
-                        <AnimatePresence mode="popLayout">
-                            {filteredProjects.map((project) => (
+                <motion.div
+                    layout
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 min-h-[400px]"
+                >
+                    <AnimatePresence mode="popLayout">
+                        {filteredProjects.map((project) => (
+                            <motion.div
+                                key={project.id}
+                                layout
+                                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                                className="group/card"
+                            >
                                 <motion.div
-                                    key={project.id}
-                                    layout
-                                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                                    exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                                    className="group"
+                                    className="border-glow-card rounded-2xl overflow-hidden cursor-pointer h-full"
+                                    whileHover={{ y: -8, scale: 1.02 }}
+                                    transition={{ type: 'spring', stiffness: 300 }}
                                 >
-                                    <motion.div
-                                        className="border-glow-card rounded-2xl overflow-hidden cursor-pointer h-full"
-                                        whileHover={{ y: -8, scale: 1.02 }}
-                                        transition={{ type: 'spring', stiffness: 300 }}
-                                    >
-                                        {/* Image Container */}
-                                        <div className="relative aspect-[4/3] overflow-hidden">
+                                    {/* Media Container */}
+                                    <div className="relative aspect-[4/3] overflow-hidden bg-black/20">
+                                        {project.image.trim().endsWith('.mp4') || project.image.trim().match(/\.(mp4|webm|ogg)$/i) ? (
+                                            <video
+                                                key={project.image}
+                                                controls
+                                                muted
+                                                loop
+                                                playsInline
+                                                className="w-full h-full object-cover"
+                                            >
+                                                <source src={project.image} type="video/mp4" />
+                                            </video>
+                                        ) : (
                                             <motion.img
                                                 src={project.image}
                                                 alt={project.title}
-                                                className="w-full h-full object-cover"
-                                                whileHover={{ scale: 1.1 }}
-                                                transition={{ duration: 0.5 }}
+                                                className="w-full h-full object-cover project-image-scroll"
                                             />
+                                        )}
 
-                                            {/* Overlay */}
-                                            <motion.div
-                                                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                                        {/* Category Badge */}
+                                        <div className="absolute top-4 left-4">
+                                            <span className="px-3 py-1 rounded-full bg-primary/60 backdrop-blur-md border border-white/10 text-white text-[10px] uppercase tracking-wider font-semibold">
+                                                {project.category}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="p-5 md:p-6 bg-primary-light/40">
+                                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent-cyan transition-colors">
+                                            {project.title}
+                                        </h3>
+                                        <Link href={project.url} target="_blank" rel="noopener noreferrer">
+                                            <motion.button
+                                                className="w-full mt-4 px-4 py-2.5 rounded-xl bg-accent-blue/10 border border-accent-blue/30 text-accent-blue text-sm font-semibold hover:bg-accent-blue hover:text-white transition-all shadow-lg shadow-accent-blue/5"
+                                                whileHover={{ scale: 1.02 }}
+                                                whileTap={{ scale: 0.98 }}
                                             >
-                                                <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
-                                                    <ArrowTopRightOnSquareIcon className="w-6 h-6 text-white" />
-                                                </div>
-                                            </motion.div>
-
-                                            {/* Category Badge */}
-                                            <div className="absolute top-4 left-4">
-                                                <span className="px-3 py-1 rounded-full bg-primary/60 backdrop-blur-md border border-white/10 text-white text-[10px] uppercase tracking-wider font-semibold">
-                                                    {project.category}
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        {/* Content */}
-                                        <div className="p-5 md:p-6 bg-primary-light/40">
-                                            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent-cyan transition-colors">
-                                                {project.title}
-                                            </h3>
-                                            <Link href={project.url} target="_blank" rel="noopener noreferrer">
-                                                <motion.button
-                                                    className="w-full mt-4 px-4 py-2.5 rounded-xl bg-accent-blue/10 border border-accent-blue/30 text-accent-blue text-sm font-semibold hover:bg-accent-blue hover:text-white transition-all shadow-lg shadow-accent-blue/5"
-                                                    whileHover={{ scale: 1.02 }}
-                                                    whileTap={{ scale: 0.98 }}
-                                                >
-                                                    View Details
-                                                </motion.button>
-                                            </Link>
-                                        </div>
-                                    </motion.div>
+                                                View Details
+                                            </motion.button>
+                                        </Link>
+                                    </div>
                                 </motion.div>
-                            ))}
-                        </AnimatePresence>
-                    </motion.div>
-                )}
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                </motion.div>
 
                 {/* View More Button */}
                 <ScrollReveal delay={0.2}>

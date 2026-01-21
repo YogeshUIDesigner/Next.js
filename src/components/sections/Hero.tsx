@@ -199,9 +199,9 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                    <Link href="/programs">
+                    <Link href="/contact">
                         <Button size="lg" className="min-w-[200px] group">
-                            Get Funded
+                            Contact Us
                             <motion.span
                                 className="inline-block"
                                 animate={{ x: [0, 5, 0] }}

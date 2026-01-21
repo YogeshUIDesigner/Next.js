@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 
 interface ScrollRevealProps {
     children: ReactNode;
@@ -20,20 +20,32 @@ export default function ScrollReveal({
     className = '',
     once = true,
 }: ScrollRevealProps) {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     const getInitialPosition = () => {
+        const distance = isMobile ? 30 : 60;
         switch (direction) {
             case 'up':
-                return { y: 60 };
+                return { y: distance };
             case 'down':
-                return { y: -60 };
+                return { y: -distance };
             case 'left':
-                return { x: 60 };
+                return { x: distance };
             case 'right':
-                return { x: -60 };
+                return { x: -distance };
             case 'none':
                 return {};
             default:
-                return { y: 60 };
+                return { y: distance };
         }
     };
 
@@ -59,7 +71,7 @@ export default function ScrollReveal({
             variants={variants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once, margin: '-80px' }}
+            viewport={{ once, margin: isMobile ? '-40px' : '-80px' }}
             className={className}
         >
             {children}

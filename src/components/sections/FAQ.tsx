@@ -33,8 +33,8 @@ export default function FAQ() {
                                 Frequently Asked <span className="gradient-text">Questions</span>
                             </h2>
                             <p className="text-gray-400 text-lg mb-8">
-                            Everything you need to know about my design services, workflow, and collaboration.
-                            Can’t find what you’re looking for? Feel free to reach out.
+                                Everything you need to know about my design services, workflow, and collaboration.
+                                Can’t find what you’re looking for? Feel free to reach out.
                             </p>
 
                             {/* CTA */}
@@ -52,7 +52,7 @@ export default function FAQ() {
                             </div>
 
                             {/* Stats */}
-                            <div className="mt-12 grid grid-cols-2 gap-6">
+                            {/* <div className="mt-12 grid grid-cols-2 gap-6">
                                 <motion.div
                                     className="glass-card p-4 rounded-xl"
                                     whileHover={{ y: -5 }}
@@ -67,7 +67,7 @@ export default function FAQ() {
                                     <div className="text-2xl font-bold text-accent-green mb-1">&lt;2hr</div>
                                     <div className="text-sm text-gray-400">Avg Response Time</div>
                                 </motion.div>
-                            </div>
+                            </div> */}
                         </div>
                     </ScrollReveal>
 

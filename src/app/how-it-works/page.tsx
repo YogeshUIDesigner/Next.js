@@ -248,10 +248,10 @@ export default function HowItWorksPage() {
                                 Let's bring your creative vision to life. Get in touch today and take the first step towards stunning designs.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <Link href="/programs">
+                                <Link href="/portfolio">
                                     <Button size="lg">View Portfolio</Button>
                                 </Link>
-                                <Link href="/portfolio">
+                                <Link href="/contact">
                                     <Button variant="outline" size="lg">Get Started</Button>
                                 </Link>
                             </div>

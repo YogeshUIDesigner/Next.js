@@ -59,19 +59,19 @@ export default function Platforms() {
                             Tools & Capabilities
                         </motion.span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-                        Design Across<span className="gradient-text">Tools & Mediums</span>
+                            Design Across<span className="gradient-text">Tools & Mediums</span>
                         </h2>
                         <p className="text-gray-400 max-w-2xl mx-auto">
-                        I work with leading design and animation tools to deliver high-quality UI/UX, motion, 3D, and print creatives—ensuring professional results across every platform.
+                            I work with leading design and animation tools to deliver high-quality UI/UX, motion, 3D, and print creatives—ensuring professional results across every platform.
                         </p>
                     </div>
                 </ScrollReveal>
 
                 <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                     {platforms.map((platform) => (
-                        <StaggerItem key={platform.name}>
+                        <StaggerItem key={platform.name} className="h-full">
                             <motion.div
-                                className="glass-card p-6 rounded-2xl text-center group cursor-pointer"
+                                className="glass-card p-6 rounded-2xl text-center group cursor-pointer h-full flex flex-col"
                                 whileHover={{
                                     y: -10,
                                     scale: 1.05,
@@ -81,7 +81,7 @@ export default function Platforms() {
                             >
                                 {/* Logo */}
                                 <motion.div
-                                    className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 transition-all duration-300"
+                                    className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 flex-shrink-0"
                                     style={{ backgroundColor: `${platform.color}20` }}
                                     whileHover={{
                                         backgroundColor: platform.color,
@@ -99,7 +99,7 @@ export default function Platforms() {
                                 <h3 className="text-white font-semibold mb-1">{platform.name}</h3>
 
                                 {/* Description */}
-                                <p className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                                <p className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors flex-grow">
                                     {platform.description}
                                 </p>
                             </motion.div>

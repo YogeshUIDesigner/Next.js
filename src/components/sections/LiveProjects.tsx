@@ -129,17 +129,8 @@ export default function LiveProjects() {
                                                         <motion.img
                                                             src={project.image}
                                                             alt={project.title}
-                                                            className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
+                                                            className="w-full h-full object-cover project-image-scroll"
                                                         />
-
-                                                        {/* Overlay on hover */}
-                                                        <motion.div
-                                                            className="absolute inset-0 bg-black/40 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                                                        >
-                                                            <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-                                                                <ArrowTopRightOnSquareIcon className="w-5 h-5 text-white" />
-                                                            </div>
-                                                        </motion.div>
 
                                                         {/* Live badge - Cleaner design */}
                                                         <div className="absolute top-4 right-4 z-10">
