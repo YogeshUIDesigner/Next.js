@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import Hero from "@/components/sections/Hero";
+import HireMePopup from "@/components/ui/HireMePopup";
 import { Metadata } from "next";
 
 const LogoSlider = dynamic(() => import("@/components/sections/LogoSlider"));
@@ -35,6 +36,7 @@ export default function Home() {
       <ContactForm />
       <FAQ />
       <CTA />
+      <HireMePopup />
     </>
   );
 }
