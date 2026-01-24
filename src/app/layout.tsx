@@ -14,7 +14,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.www.yogeshdesigner.in/'),
+  metadataBase: new URL('https://www.yogeshdesigner.in/'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: "Yogesh Designer - UI/UX & Graphic Designer in India",
     template: "%s | Yogesh Designer"
