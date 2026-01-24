@@ -96,18 +96,17 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
+                "@id": "https://www.yogeshdesigner.in/#professionalservice",
                 "name": "Yogesh Designer",
-                "image": "https://www.yogeshdesigner.in/og-image.jpg",
                 "url": "https://www.yogeshdesigner.in",
-                "telephone": "",
+                "logo": "https://www.yogeshdesigner.in/og-image.jpg",
+                "image": "https://www.yogeshdesigner.in/og-image.jpg",
+                "description": "Yogesh Designer is a creative professional offering website design, UI/UX design, 2D motion graphics, 3D product animation, flyer and brochure design for clients worldwide.",
                 "priceRange": "$$",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressCountry": "IN"
-                },
-                "geo": {
-                  "@type": "GeoCoordinates",
-                  "addressCountry": "IN"
+                "telephone": "+919870765966",
+                "areaServed": {
+                  "@type": "Place",
+                  "name": "Worldwide"
                 },
                 "openingHoursSpecification": {
                   "@type": "OpeningHoursSpecification",
@@ -116,11 +115,18 @@ export default function RootLayout({
                     "Tuesday",
                     "Wednesday",
                     "Thursday",
-                    "Friday"
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
                   ],
-                  "opens": "09:00",
-                  "closes": "18:00"
-                }
+                  "opens": "06:00",
+                  "closes": "23:00"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/graphicsdesigner98/",
+                  "https://www.linkedin.com/in/yogesh-mahor-826507259/",
+                  "https://www.behance.net/"
+                ]
               }
             ]),
           }}
