@@ -5,7 +5,8 @@ export const liveProjectsData = [
         category: 'Web Design',
         image: '/Images/live-project/bikanervala.webp',
         url: 'https://bikanervala.ae/',
-        type: 'live'
+        type: 'live',
+        alt: 'Bikanervala Website'
     },
     {
         id: 2,
@@ -13,7 +14,8 @@ export const liveProjectsData = [
         category: 'Web Design',
         image: '/Images/live-project/veterans-for-veterans.webp',
         url: 'https://veterans-for-veterans.co.uk/',
-        type: 'live'
+        type: 'live',
+        alt: 'Veterans-for-veterans Website'
     },
     {
         id: 3,
@@ -21,7 +23,8 @@ export const liveProjectsData = [
         category: 'Web Design',
         image: '/Images/live-project/zocooaustralia.webp',
         url: 'https://zocooaustralia.com/',
-        type: 'live'
+        type: 'live',
+        alt: 'Zocoo Australia Website'
     },
     {
         id: 4,
@@ -29,6 +32,7 @@ export const liveProjectsData = [
         category: 'Web Design',
         image: '/Images/live-project/segev.webp',
         url: '#',
-        type: 'live'
+        type: 'live',
+        alt: 'Segev Website'
     }
 ];

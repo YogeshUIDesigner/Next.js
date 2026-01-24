@@ -4,98 +4,112 @@ export const projectGalleryData = [
         title: 'Neurology Brain 3D Animation',
         category: '3D Motion',
         image: '/Images/Portfolio/3d/Game.mp4',
-        url: '#'
+        url: '#',
+        alt: 'Neurology Brain 3D Animation'
     },
     {
         id: 2,
         title: 'Company Branding Animation',
         category: '2D Motion',
         image: '/Images/Portfolio/2d/Company Branding.mp4',
-        url: '#'
+        url: '#',
+        alt: 'Company Branding Animation'
     },
     {
         id: 3,
         title: 'Marhaba Home Web Design',
         category: 'Web Design',
         image: '/Images/Portfolio/figma/Marhaba Home page.webp',
-        url: '#'
+        url: '#',
+        alt: 'Marhaba Home Web Design'
     },
     {
         id: 4,
         title: 'Animated Dashboard GIF',
         category: 'GIF',
         image: '/Images/Portfolio/gif/Dashboard.gif',
-        url: '#'
+        url: '#',
+        alt: 'Animated Dashboard GIF'
     },
     {
         id: 5,
         title: 'New Year 3D Animation',
         category: '3D Motion',
         image: '/Images/Portfolio/3d/new-year.mp4',
-        url: '#'
+        url: '#',
+        alt: 'New Year 3D Animation'
     },
     {
         id: 6,
         title: 'Company Foundation Animation',
         category: '2D Motion',
         image: '/Images/Portfolio/2d/Company Foundation.mp4',
-        url: '#'
+        url: '#',
+        alt: 'Company Foundation Animation'
     },
     {
         id: 7,
         title: 'Inaki Beni Web Design',
         category: 'Web Design',
         image: '/Images/Portfolio/figma/Inaki Beni.webp',
-        url: '#'
+        url: '#',
+        alt: 'Inaki Beni Web Design'
     },
     {
         id: 8,
         title: 'World Food Day Animation',
         category: '2D Motion',
         image: '/Images/Portfolio/2d/World Food Day Animation.mp4',
-        url: '#'
+        url: '#',
+        alt: 'World Food Day Animation'
     },
     {
         id: 9,
         title: 'Neurology Brain 3D Animation',
         category: '3D Motion',
         image: '/Images/Portfolio/3d/neurology-brain-3d-animation.mp4',
-        url: '#'
+        url: '#',
+        alt: 'Neurology Brain 3D Animation'
     },
     {
         id: 15,
         title: 'The Secret to Successful',
         category: 'Flyer Design',
         image: '/Images/Portfolio/Flayer/The secret to successful.webp',
-        url: '#'
+        url: '#',
+        alt: 'The Secret to Successful'
     },
     {
         id: 10,
         title: 'Animated  GIF',
         category: 'GIF',
         image: '/Images/Portfolio/gif/gif-2.gif',
-        url: '#'
+        url: '#',
+        alt: 'Animated  GIF'
     },
     {
         id: 11,
         title: 'Dussehra-Animation',
         category: '2D Motion',
         image: '/Images/Portfolio/2d/Dussehra-Animation=2.mp4',
-        url: '#'
+        url: '#',
+        alt: 'Dussehra-Animation'
     },
     {
         id: 12,
         title: 'Book Cover Design',
         category: 'Flyer Design',
         image: '/Images/Portfolio/Flayer/Book Cover Design.webp',
-        url: '#'
+        url: '#',
+        alt: 'Book Cover Design'
     },
     {
         id: 13,
         title: 'Expensepilot Web Design',
         category: 'Web Design',
         image: '/Images/Portfolio/figma/Expensepilot.webp',
-        url: '#'
+        url: '#',
+        alt: 'Expensepilot Web Design'
     },
     {
         id: 14,
@@ -110,14 +124,16 @@ export const projectGalleryData = [
         title: 'Book Cover',
         category: 'Flyer Design',
         image: '/Images/Portfolio/Flayer/Book Cover.webp',
-        url: '#'
+        url: '#',
+        alt: 'Book Cover'
     },
     {
         id: 17,
         title: 'Boost Your Business',
         category: 'Flyer Design',
         image: '/Images/Portfolio/Flayer/Boost.webp',
-        url: '#'
+        url: '#',
+        alt: 'Boost Your Business'
     },
 ];
 

@@ -14,14 +14,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://yogeshdesigner.in'),
+  metadataBase: new URL('https://www.www.yogeshdesigner.in/'),
   title: {
     default: "Yogesh Designer - UI/UX & Graphic Designer in India",
     template: "%s | Yogesh Designer"
   },
-  description: "Award-winning UI/UX Designer in India specializing in modern websites, dashboards, and mobile apps. Hire a freelance designer for premium visual identity.",
-  keywords: ["graphic designer", "ui ux designer", "freelance graphic designer", "ui ux designer india", "professional graphic designer", "creative graphic designer", "web & app designer", "brand identity designer", "digital designer", "visual designer", "next.js developer", "tailwindcss", "portfolio", "creative portfolio"],
-  authors: [{ name: "Yogesh Designer", url: "https://yogeshdesigner.in" }],
+  description: "UI/UX Designer in India specializing in modern websites, dashboards, and mobile apps. Hire a freelance designer for premium visual identity.",
+  keywords: ["graphic designer", "ui ux designer", "freelance graphic designer", "ui ux designer in india", "professional graphic designer", "creative graphic designer", "web & app designer", "brand identity designer", "digital designer", "visual designer", "3d designer", "yogesh oneness", "Video Editor", "3d production animation", "2d animation", "portfolio", "creative portfolio"],
+  authors: [{ name: "Yogesh Designer", url: "https://www.yogeshdesigner.in" }],
   creator: "Yogesh Designer",
   publisher: "Yogesh Designer",
   icons: {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yogeshdesigner.in/",
+    url: "https://www.yogeshdesigner.in/",
     siteName: "Yogesh Designer",
     title: "Yogesh Designer - UI/UX & Graphic Designer",
     description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs. Logos, websites & app UI by Yogesh Oneness.",
@@ -82,7 +82,7 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "Person",
                 name: "Yogesh Designer",
-                url: "https://yogeshdesigner.in",
+                url: "https://www.yogeshdesigner.in",
                 jobTitle: "UI/UX & Graphic Designer",
                 sameAs: [
                   "https://www.instagram.com/yogeshdesigner",
@@ -94,8 +94,8 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
                 "name": "Yogesh Designer",
-                "image": "https://yogeshdesigner.in/og-image.jpg",
-                "url": "https://yogeshdesigner.in",
+                "image": "https://www.yogeshdesigner.in/og-image.jpg",
+                "url": "https://www.yogeshdesigner.in",
                 "telephone": "",
                 "priceRange": "$$",
                 "address": {

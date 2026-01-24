@@ -125,7 +125,7 @@ export default function AboutPageContent() {
                             >
                                 <Image
                                     src="/Images/yogesh.webp"
-                                    alt="Yogesh Mahor"
+                                    alt="Yogesh oneness"
                                     fill
                                     className="object-cover"
                                 />
