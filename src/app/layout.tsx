@@ -84,14 +84,37 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "Person",
-                name: "Yogesh Designer",
-                url: "https://www.yogeshdesigner.in",
-                jobTitle: "UI/UX & Graphic Designer",
-                sameAs: [
+                "@id": "https://www.yogeshdesigner.in/#person",
+                "name": "Yogesh Designer",
+                "url": "https://www.yogeshdesigner.in",
+                "jobTitle": "UI/UX & Graphic Designer",
+                "image": "https://www.yogeshdesigner.in/og-image.jpg",
+                "sameAs": [
                   "https://www.instagram.com/yogeshdesigner",
                   "https://www.linkedin.com/in/yogeshdesigner",
                 ],
-                description: "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs.",
+                "description": "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs.",
+                "worksFor": {
+                  "@id": "https://www.yogeshdesigner.in/#organization"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "@id": "https://www.yogeshdesigner.in/#organization",
+                "name": "Yogesh Designer",
+                "url": "https://www.yogeshdesigner.in",
+                "logo": "https://www.yogeshdesigner.in/og-image.jpg",
+                "sameAs": [
+                  "https://www.instagram.com/graphicsdesigner98/",
+                  "https://www.linkedin.com/in/yogesh-mahor-826507259/",
+                  "https://www.behance.net/"
+                ],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+919870765966",
+                  "contactType": "customer service"
+                }
               },
               {
                 "@context": "https://schema.org",
@@ -104,6 +127,10 @@ export default function RootLayout({
                 "description": "Yogesh Designer is a creative professional offering website design, UI/UX design, 2D motion graphics, 3D product animation, flyer and brochure design for clients worldwide.",
                 "priceRange": "$$",
                 "telephone": "+919870765966",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "IN"
+                },
                 "areaServed": {
                   "@type": "Place",
                   "name": "Worldwide"
