@@ -5,6 +5,9 @@ import ServicesPageContent from '@/components/pages/ServicesPageContent';
 export const metadata: Metadata = {
     title: "UI/UX & Web Design Services in India | Yogesh Designer",
     description: "Expert UI/UX design, website development, and branding services for startups and businesses. Freelance web designer based in India.",
+    alternates: {
+        canonical: '/services',
+    },
 };
 
 export default function ServicesPage() {

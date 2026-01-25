@@ -19,6 +19,9 @@ const CTA = dynamic(() => import("@/components/sections/CTA"), { loading: () => 
 export const metadata: Metadata = {
   title: "UI/UX Designer in India | Yogesh Designer - Web & Mobile Apps",
   description: "Welcome to the official portfolio of Yogesh Designer. Explore my latest work in UI/UX design, branding, and motion graphics.",
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function Home() {
