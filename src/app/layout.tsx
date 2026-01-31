@@ -87,8 +87,8 @@ export default function RootLayout({
                 "jobTitle": "UI/UX & Graphic Designer",
                 "image": "https://www.yogeshdesigner.in/og-image.jpg",
                 "sameAs": [
-                  "https://www.instagram.com/yogeshdesigner",
-                  "https://www.linkedin.com/in/yogeshdesigner",
+                  "https://www.instagram.com/graphicsdesigner98/",
+                  "https://www.linkedin.com/in/yogesh-mahor-826507259/",
                 ],
                 "description": "Creative Graphic & UI/UX Designer helping brands grow with modern, user-friendly designs.",
                 "worksFor": {
@@ -145,12 +145,7 @@ export default function RootLayout({
                   ],
                   "opens": "06:00",
                   "closes": "23:00"
-                },
-                "sameAs": [
-                  "https://www.instagram.com/graphicsdesigner98/",
-                  "https://www.linkedin.com/in/yogesh-mahor-826507259/",
-                  "https://www.behance.net/"
-                ]
+                }
               }
             ]),
           }}

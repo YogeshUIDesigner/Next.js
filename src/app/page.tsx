@@ -17,7 +17,7 @@ const FAQ = dynamic(() => import("@/components/sections/FAQ"), { loading: () => 
 const CTA = dynamic(() => import("@/components/sections/CTA"), { loading: () => <div className="h-96" /> });
 
 export const metadata: Metadata = {
-  title: "UI/UX Designer in India | Yogesh Designer - Web & Mobile Apps",
+  title: "UI/UX Designer in India | Yogesh Designer – Web, App & Creative Design",
   description: "Welcome to the official portfolio of Yogesh Designer. Explore my latest work in UI/UX design, branding, and motion graphics.",
   alternates: {
     canonical: '/',
