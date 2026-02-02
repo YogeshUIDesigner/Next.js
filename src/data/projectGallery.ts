@@ -42,8 +42,8 @@ export const projectGalleryData = [
     {
         id: 6,
         title: 'Company Foundation Animation',
-        category: '2D Motion',
-        image: '/Images/Portfolio/2d/Company Foundation.mp4',
+        category: 'Video Editing',
+        image: '/Images/Portfolio/video/Company Foundation.mp4',
         url: '#',
         alt: 'Company Foundation Animation'
     },
@@ -137,4 +137,4 @@ export const projectGalleryData = [
     },
 ];
 
-export const GALLERY_CATEGORIES = ['All', '3D Motion', '2D Motion', 'Web Design', 'Flyer Design', 'GIF'];
+export const GALLERY_CATEGORIES = ['All', 'Web Design', '3D Motion', '2D Motion', 'Video Editing', 'Flyer Design', 'GIF'];

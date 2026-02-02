@@ -11,6 +11,7 @@ import {
     FilmIcon,
     DocumentTextIcon,
     BoltIcon,
+    VideoCameraIcon,
     SwatchIcon
 } from '@heroicons/react/24/outline';
 
@@ -32,6 +33,12 @@ const services = [
         title: '2D Motion Graphics',
         description: 'Engaging 2D motion graphics crafted for marketing, social media, and brand communication.',
         features: ['Social Media Animations', '2D Explainer Video', '2D Character Animation', '2D Product Animation', 'Promo & Ad Videos']
+    },
+    {
+        icon: VideoCameraIcon,
+        title: 'Adobe Premiere Pro',
+        description: 'Professional video editing that enhances storytelling and brand impact. We create clean, engaging videos designed for digital platforms and marketing needs.',
+        features: ['Video Editing', 'Social Media Reels & Shorts', 'YouTube & Promotional Videos', 'Audio Sync & Sound Design', 'Color Correction & Final Export']
     },
     {
         icon: DocumentTextIcon,

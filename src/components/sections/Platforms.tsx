@@ -36,9 +36,9 @@ const platforms = [
         color: '#FFC107',
     },
     {
-        name: 'Canva',
-        logo: 'Cn',
-        description: 'Fast, professional designs for social media, presentations, flyers, brochures, and marketing creatives.',
+        name: 'adobe premiere pro',
+        logo: 'Pr',
+        description: 'Fast, professional video editing for social media, YouTube, ads, presentations, and marketing creatives.',
         color: '#00BCD4',
     },
 ];
