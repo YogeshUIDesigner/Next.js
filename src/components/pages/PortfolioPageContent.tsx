@@ -123,12 +123,12 @@ export default function PortfolioPageContent() {
                                                     <source src={project.image} type="video/mp4" />
                                                 </video>
                                             ) : (
-                                                <div className={`w-full h-full flex items-center justify-center ${project.category === 'Logo' ? 'p-10 bg-white/5' : ''}`}>
+                                                <div className="w-full h-full">
                                                     <Image
                                                         src={project.image}
                                                         alt={project.title}
                                                         fill
-                                                        className={`w-full h-full project-image-scroll ${project.category === 'Logo' ? 'object-contain scale-110' : 'object-cover'}`}
+                                                        className="w-full h-full object-cover project-image-scroll"
                                                     />
                                                 </div>
                                             )}

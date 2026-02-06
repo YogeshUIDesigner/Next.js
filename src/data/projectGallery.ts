@@ -135,7 +135,6 @@ export const projectGalleryData = [
         url: '#',
         alt: 'Boost Your Business'
     },
-
 ];
 
 export const GALLERY_CATEGORIES = ['All', 'Web Design', '3D Motion', '2D Motion', 'Video Editing', 'Flyer Design', 'GIF'];
