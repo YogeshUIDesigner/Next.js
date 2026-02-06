@@ -8,6 +8,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function HireMePopup() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isNearFooter, setIsNearFooter] = useState(false);
 
     useEffect(() => {
         // Check if the popup has already been shown in this session
@@ -22,6 +23,25 @@ export default function HireMePopup() {
         }
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.scrollY;
+            const clientHeight = window.innerHeight;
+
+            // Hide if we are within 500px of the bottom (footer area)
+            // or if the scroll position is near the bottom
+            if (scrollTop + clientHeight > scrollHeight - 500) {
+                setIsNearFooter(true);
+            } else {
+                setIsNearFooter(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const handleClose = () => {
         setIsOpen(false);
         sessionStorage.setItem('hireMePopupShown', 'true');
@@ -29,8 +49,8 @@ export default function HireMePopup() {
 
     return (
         <AnimatePresence>
-            {isOpen && (
-                <div className="fixed bottom-0 left-0 right-0 z-[100] p-4 md:p-6 pointer-events-none">
+            {isOpen && !isNearFooter && (
+                <div className="fixed bottom-0 left-0 right-0 z-[999] p-4 md:p-6 pointer-events-none">
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -46,10 +66,10 @@ export default function HireMePopup() {
                             {/* Close Button */}
                             <button
                                 onClick={handleClose}
-                                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+                                className="absolute top-4 right-4 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all active:scale-95"
                                 aria-label="Close popup"
                             >
-                                <XMarkIcon className="w-5 h-5" />
+                                <XMarkIcon className="w-6 h-6" />
                             </button>
 
                             {/* Profile Image */}

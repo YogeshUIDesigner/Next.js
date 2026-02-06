@@ -6,9 +6,22 @@ import Link from 'next/link';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import { projectGalleryData, GALLERY_CATEGORIES } from '@/data/projectGallery';
+import Lightbox from '@/components/ui/Lightbox';
+import Image from 'next/image';
 
 export default function ProjectGallery() {
     const [activeFilter, setActiveFilter] = useState('All');
+    const [lightbox, setLightbox] = useState<{
+        isOpen: boolean;
+        mediaUrl: string;
+        mediaType: 'image' | 'video';
+        title: string;
+    }>({
+        isOpen: false,
+        mediaUrl: '',
+        mediaType: 'image',
+        title: '',
+    });
 
     const filteredProjects = useMemo(() => {
         const results = activeFilter === 'All'
@@ -63,6 +76,12 @@ export default function ProjectGallery() {
                                 className="group/card"
                             >
                                 <motion.div
+                                    onClick={() => setLightbox({
+                                        isOpen: true,
+                                        mediaUrl: project.image,
+                                        mediaType: (project.image.trim().endsWith('.mp4') || project.image.trim().match(/\.(mp4|webm|ogg)$/i)) ? 'video' : 'image',
+                                        title: project.title,
+                                    })}
                                     className="border-glow-card rounded-2xl overflow-hidden cursor-pointer h-full"
                                     whileHover={{ y: -8, scale: 1.02 }}
                                     transition={{ type: 'spring', stiffness: 300 }}
@@ -81,11 +100,14 @@ export default function ProjectGallery() {
                                                 <source src={project.image} type="video/mp4" />
                                             </video>
                                         ) : (
-                                            <motion.img
-                                                src={project.image}
-                                                alt={project.title}
-                                                className="w-full h-full object-cover project-image-scroll"
-                                            />
+                                            <div className={`w-full h-full flex items-center justify-center ${project.category === 'Logo' ? 'p-10 bg-white/5' : ''}`}>
+                                                <Image
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    fill
+                                                    className={`w-full h-full project-image-scroll ${project.category === 'Logo' ? 'object-contain scale-110' : 'object-cover'}`}
+                                                />
+                                            </div>
                                         )}
 
                                         {/* Category Badge */}
@@ -132,6 +154,14 @@ export default function ProjectGallery() {
                     </div>
                 </ScrollReveal>
             </div>
+
+            <Lightbox
+                isOpen={lightbox.isOpen}
+                onClose={() => setLightbox({ ...lightbox, isOpen: false })}
+                mediaUrl={lightbox.mediaUrl}
+                mediaType={lightbox.mediaType}
+                title={lightbox.title}
+            />
         </section>
     );
 }
